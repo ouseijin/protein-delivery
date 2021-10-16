@@ -40,5 +40,10 @@
 
 また、筋トレしている人向けの高タンパク質の宅配食を知った当初、こんな素晴らしい商品は早く知りたかったと感じた。筋トレしていて、食事に困っている私の様な人間は他にもいると思い、そういった方にも情報を届けたい。
 
+
 # 画面遷移図
 https://www.figma.com/file/UtvxbQrMSL6kih5SSaDYLG/画面遷移図?node-id=0%3A1
+
+
+# ER図
+https://drive.google.com/file/d/1HDyb9WGtucyzHJeaQ-hD1rNLGFQbOXsF/view?usp=sharing
