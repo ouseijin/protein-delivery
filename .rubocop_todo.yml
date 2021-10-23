@@ -22,29 +22,12 @@ Layout/ArgumentAlignment:
   Exclude:
     - 'bin/webpack'
     - 'bin/webpack-dev-server'
-    - 'db/fixtures/development/01_service.rb'
 
 # Offense count: 6
 # Cop supports --auto-correct.
 Layout/EmptyLineAfterGuardClause:
   Exclude:
     - 'bin/bundle'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: empty_lines, no_empty_lines
-Layout/EmptyLinesAroundBlockBody:
-  Exclude:
-    - 'db/schema.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, IndentationWidth.
-# SupportedStyles: special_inside_parentheses, consistent, align_braces
-Layout/FirstHashElementIndentation:
-  Exclude:
-    - 'db/fixtures/development/01_service.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -62,14 +45,6 @@ Layout/MultilineOperationIndentation:
 Layout/SpaceInsideArrayLiteralBrackets:
   Exclude:
     - 'config/environments/production.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: final_newline, final_blank_line
-Layout/TrailingEmptyLines:
-  Exclude:
-    - 'db/fixtures/development/01_service.rb'
 
 # Offense count: 1
 # Configuration parameters: IgnoredMethods.
@@ -187,13 +162,6 @@ Style/StringLiterals:
 Style/SymbolArray:
   EnforcedStyle: brackets
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForMultiline.
-# SupportedStylesForMultiline: comma, consistent_comma, no_comma
-Style/TrailingCommaInArguments:
-  Exclude:
-    - 'db/fixtures/development/01_service.rb'
 
 # Offense count: 3
 # Cop supports --auto-correct.
