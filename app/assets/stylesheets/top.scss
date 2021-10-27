@@ -1,0 +1,24 @@
+.top-wrapper {
+  background-image: url("top.jpg");
+  background-size: cover;
+  background-repeat:  no-repeat;
+  background-position: center;
+  height: calc(100vh - 134px);
+  position: relative;
+  
+
+  .top-inner-text {
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    color: black;
+
+    @media screen and (max-width: 767px) {
+      font-size: 2.0rem;
+    }
+  }
+}
