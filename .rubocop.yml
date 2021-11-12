@@ -13,6 +13,7 @@ AllCops:
     - db/migrate/*
     - vendor/**/*
     - node_modules/**/*
+    - db/scrape_test.rb # nokogiri使わなければ、ファイルとこのコードを消していいかも
 
 # "Missing top-level class documentation comment."を無効
 Style/Documentation:
