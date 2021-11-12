@@ -1,10 +1,11 @@
 <div class="text-center bg-warning">
   <%= @service.name %>
   <div class="col-sm-12">
-    <%= @service.body%>
+    <%= @service.body %>
   </div>
   <div class="col-sm-12">
-    <%= link_to('公式HPはコチラ!', @service.service_url, target: :_blank, rel: 'noopener noreferrer') %>
+    <%= link_to '公式HPはコチラ！', @service.service_url, target: :_blank, rel: 'noopener noreferrer' %>
   </div>
   <%= image_tag "services/#{@service.service_image}", width: '60%', height: '60%' %>
+  <%= link_to 'メニュー一覧はコチラ！', service_menus_path(@service) %>
 </div>

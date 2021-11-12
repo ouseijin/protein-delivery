@@ -37,3 +37,5 @@ yarn-debug.log*
 
 .DS_Store
 /app/assets/images/services/*
+/app/assets/images/menus/*
+/db/scrape_test.rb

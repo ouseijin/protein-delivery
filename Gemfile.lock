@@ -226,6 +226,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.2)
   mysql2 (>= 0.4.4)
+  nokogiri
   puma (~> 4.1)
   rails (~> 6.0.4, >= 6.0.4.1)
   ridgepole
