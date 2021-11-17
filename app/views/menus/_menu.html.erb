@@ -1,17 +1,18 @@
 <% if current_page?('/all_menus')%>
-  <%= "<#{menu.service.name}のメニュー>" %>
+  <div class="col-sm-12">
+    <%= "<#{menu.service.name}のメニュー>" %>
+  </div>
 <% end %>
 <div class="col-sm-12">
-    <%= menu.name %>
-  </div>
-  <div class="col-sm-12">
-    <%= menu.size %>
-    <%= "#{menu.calorie}kcal" %>
-    <%= "タンパク質：#{menu.protein}g" %>
-    <%= "脂質：#{menu.fat}g" %>
-    <%= "炭水化物：#{menu.carb}g" %>
-  </div>
-  <div class="col-sm-12 col-lg-4 mb-3">
-    <%= image_tag "menus/#{menu.menu_image}", width: '60%', height: '60%' %>
-  </div>
+  <%= menu.name %>
+</div>
+<div class="col-sm-12">
+  <%= menu.size %>
+  <%= "#{menu.calorie}kcal" %>
+  <%= "タンパク質：#{menu.protein}g" %>
+  <%= "脂質：#{menu.fat}g" %>
+  <%= "炭水化物：#{menu.carb}g" %>
+</div>
+<div class="col-sm-12 col-lg-4 mb-3">
+  <%= image_tag "menus/#{menu.menu_image}", width: '60%', height: '60%' %>
 </div>
