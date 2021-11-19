@@ -10,13 +10,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto main-nav align-items-center">
         <li class="nav-item p-2">
-          <%= link_to '宅配食一覧', services_path, class: 'nav-link' %>
+          <%= link_to '宅配サービス一覧', services_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item p-2">
+          <%= link_to '全メニュー一覧', '/all_menus', class: 'nav-link' %>
         </li>
         <li class="nav-item p-2">
           <%= link_to 'ランキング', '#', class: 'nav-link' %>
-        </li>
-        <li class="nav-item p-2">
-          <%= link_to 'お気に入り', '#', class: 'nav-link' %>
         </li>
 
         <li class="nav-item dropdown dropdown-slide p-2">
@@ -26,6 +26,7 @@
           <div class="dropdown-menu dropdown-menu-right">
             <div class="dropdown-item"></div>
             <div class="dropdown-divider"></div>
+            <%= link_to 'お気に入り', '#', class: 'dropdown-item' %>
             <%= link_to 'プロフィール編集', '#', class: 'dropdown-item' %>
             <%= link_to 'ログアウト', '#', class: 'dropdown-item' %>
           </div>

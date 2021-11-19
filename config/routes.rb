@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :services, only: [:index, :show] do
     resources :menus, only: [:index]
   end
+  get 'all_menus', to: 'menus#all_menus'
 end
