@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   resources :services, only: [:index, :show] do
     resources :menus, only: [:index]
   end
+  resources :users, only: [:new, :create]
   get 'all_menus', to: 'menus#all_menus'
+  get 'login', to: 'user_sessions#new'
+  post 'login', to: 'user_sessions#create'
+  delete 'logout', to: 'user_sessions#destroy'
 end
