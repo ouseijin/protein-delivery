@@ -121,7 +121,8 @@ Rails.application.config.sorcery.configure do |config|
   config.twitter.callback_url = 'http://127.0.0.1:3000/oauth/callback?provider=twitter'
   config.twitter.user_info_mapping = {
     email: 'email',
-    name: 'name'
+    name: 'name',
+    remote_avatar_url: 'profile_image_url_https'
   }
   #
   # config.facebook.key = ""
@@ -167,7 +168,8 @@ Rails.application.config.sorcery.configure do |config|
   config.google.callback_url = 'http://127.0.0.1:3000/oauth/callback?provider=google'
   config.google.user_info_mapping = {
     email: 'email',
-    name: 'name'
+    name: 'name',
+    remote_avatar_url: 'picture'
   }
   # config.google.scope = "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
   #

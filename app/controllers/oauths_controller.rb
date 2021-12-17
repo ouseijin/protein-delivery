@@ -24,7 +24,7 @@ class OauthsController < ApplicationController
     auto_login(@user)
     redirect_to root_path, success: "#{provider.titleize}でログインしました"
   rescue ActiveRecord::RecordNotUnique
-    redirect_to root_path, danger: "同じメールアドレスのユーザーが他に存在しているためログイン出来ません"
+    redirect_to root_path, info: "同じメールアドレスのユーザーが他に存在しているためログイン出来ません"
   rescue StandardError
     redirect_to root_path, danger: "#{provider.titleize}でのログインに失敗しました"
   end
