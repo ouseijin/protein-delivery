@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :menus, only: [:index]
   end
   resources :users, only: [:new, :create]
+  resource :profile, only: [:show, :edit, :update]
   get 'all_menus', to: 'menus#all_menus'
 
   get 'login', to: 'user_sessions#new'
