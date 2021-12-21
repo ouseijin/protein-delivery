@@ -21,14 +21,15 @@
 
         <li class="nav-item dropdown dropdown-slide p-2">
           <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="header-profile">
-            Dropdown link
+            <%= image_tag current_user.avatar_url, size: '40x40', class: 'rounded-circle mr15' %>
+            <%= current_user.name %>
           </a>
           <div class="dropdown-menu dropdown-menu-right">
             <div class="dropdown-item"></div>
             <div class="dropdown-divider"></div>
             <%= link_to 'お気に入り', '#', class: 'dropdown-item' %>
-            <%= link_to 'プロフィール編集', '#', class: 'dropdown-item' %>
-            <%= link_to 'ログアウト', '#', class: 'dropdown-item' %>
+            <%= link_to 'プロフィール', profile_path, class: 'dropdown-item' %>
+            <%= link_to 'ログアウト', logout_path, class: 'dropdown-item', method: :delete %>
           </div>
         </li>
       </ul>
