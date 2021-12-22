@@ -7,5 +7,9 @@
     <%= link_to '公式HPはコチラ！', @service.service_url, target: :_blank, rel: 'noopener noreferrer' %>
   </div>
   <%= image_tag "services/#{@service.service_image}", width: '60%', height: '60%' %>
-  <%= link_to 'このサービスのメニューはコチラ！', service_menus_path(@service) %>
+  <div class="col-sm-12">
+    <%= link_to 'このサービスのメニューはコチラ！', service_menus_path(@service) %>
+  </div>
+  <%= render 'reviews/form', { service: @service, review: @review } %>
+  <%= render 'reviews/reviews', { reviews: @reviews } %>
 </div>

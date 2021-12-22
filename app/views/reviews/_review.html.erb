@@ -1,0 +1,33 @@
+<tr id="review-<%= review.id %>">
+  <td style="width: 60px">
+    <%= image_tag 'default.png', class: 'rounded-circle', size: '50x50' %>
+  </td>
+  <td>
+    <h3 class="small"><%= review.user.name %></h3>
+    <div id="js-review-<%= review.id %>">
+      <%= simple_format(review.body) %>
+    </div>
+    <div id="js-textarea-review-box-<%= review.id %>" style="display: none;">
+      <textarea id="js-textarea-review-<%= review.id %>" class="form-control mb-1"><%= review.body %></textarea>
+      <button class="btn btn-light js-button-edit-review-cancel" data-review-id="<%= review.id %>">キャンセル</button>
+      <button class="btn btn-success js-button-review-update" data-review-id="<%= review.id %>">更新</button>
+    </div>
+  </td>
+
+  <% if current_user.own?(review) %>
+    <td class="action">
+      <ul class="list-inline justify-content-center" style="float: right;">
+        <li class="list-inline-item">
+          <a href="#" class='js-edit-review-button' data-review-id="<%= review.id %>">
+            <%= icon 'fa', 'pen' %>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#" class='js-delete-review-button' data-review-id="<%= review.id %>">
+            <%= icon 'fas', 'trash' %>
+          </a>
+        </li>
+      </ul>
+    </td>
+  <% end %>
+</tr>

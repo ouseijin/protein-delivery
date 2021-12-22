@@ -1,0 +1,12 @@
+<div class="row mb-3">
+  <div class="col-lg-8 offset-lg-2">
+    <%= form_with model: review, url: [service, review], local: true do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control mb-3', id: 'js-new-review-title', placeholder: 'レビューのタイトルをお願いします' %>
+      <%= f.label :body %>
+      <%= f.text_area :body, class: 'form-control mb-3', id: 'js-new-review-body', rows: 4, placeholder: 'レビュー内容の記載をお願いします' %>
+      <%= f.submit '投稿', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_10_110353) do
+ActiveRecord::Schema.define(version: 2021_12_21_050537) do
 
   create_table "authentications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -35,6 +35,19 @@ ActiveRecord::Schema.define(version: 2021_12_10_110353) do
     t.index ["service_id"], name: "index_menus_on_service_id"
   end
 
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "service_id", null: false
+    t.bigint "user_id", null: false
+    t.string "title"
+    t.text "body"
+    t.float "rate", null: false
+    t.string "review_image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["service_id"], name: "index_reviews_on_service_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "services", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.text "body", null: false
@@ -56,4 +69,6 @@ ActiveRecord::Schema.define(version: 2021_12_10_110353) do
   end
 
   add_foreign_key "menus", "services"
+  add_foreign_key "reviews", "services"
+  add_foreign_key "reviews", "users"
 end
