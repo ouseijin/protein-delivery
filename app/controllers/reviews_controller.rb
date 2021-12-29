@@ -13,6 +13,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:title, :body, :rate, :review_image, :review_image_cache).merge(service_id: params[:service_id])
+    params.require(:review).permit(:title, :body, :rate, :review_image,
+                                   :review_image_cache).merge(service_id: params[:service_id])
   end
 end

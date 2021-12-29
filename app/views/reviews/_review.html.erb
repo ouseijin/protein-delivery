@@ -1,30 +1,44 @@
 <tr id="review-<%= review.id %>">
   <td style="width: 60px">
-    <%= image_tag 'default.png', class: 'rounded-circle', size: '50x50' %>
+    <%= image_tag review.user.avatar_url, class: 'rounded-circle', size: '50x50' %>
   </td>
   <td>
     <h3 class="small"><%= review.user.name %></h3>
     <div id="js-review-<%= review.id %>">
+      <%= simple_format(review.title) %>
       <%= simple_format(review.body) %>
     </div>
+    <h4 class="mb-3">評価：<%= review.rate %>点</h4>
+    <div id="star-rate-<%= review.id %>"></div>
     <div id="js-textarea-review-box-<%= review.id %>" style="display: none;">
       <textarea id="js-textarea-review-<%= review.id %>" class="form-control mb-1"><%= review.body %></textarea>
       <button class="btn btn-light js-button-edit-review-cancel" data-review-id="<%= review.id %>">キャンセル</button>
       <button class="btn btn-success js-button-review-update" data-review-id="<%= review.id %>">更新</button>
     </div>
   </td>
+  
+  <script>
+    $('#star-rate-<%= review.id %>').raty({
+      starOff:  '<%= asset_path('star-off.png') %>',
+      starOn : '<%= asset_path('star-on.png') %>',
+      starHalf: '<%= asset_path('star-half.png') %>',
+      half: true,
+      readOnly: true,
+      score: <%= review.rate %>,
+    });
+  </script>  
 
   <% if current_user.own?(review) %>
     <td class="action">
       <ul class="list-inline justify-content-center" style="float: right;">
         <li class="list-inline-item">
           <a href="#" class='js-edit-review-button' data-review-id="<%= review.id %>">
-            <%= icon 'fa', 'pen' %>
+            <%#= icon 'fa', 'pen' %>
           </a>
         </li>
         <li class="list-inline-item">
           <a href="#" class='js-delete-review-button' data-review-id="<%= review.id %>">
-            <%= icon 'fas', 'trash' %>
+            <%#= icon 'fas', 'trash' %>
           </a>
         </li>
       </ul>
