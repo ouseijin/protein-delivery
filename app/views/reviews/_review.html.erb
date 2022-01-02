@@ -10,6 +10,11 @@
     </div>
     <h4 class="mb-3">評価：<%= review.rate %>点</h4>
     <div id="star-rate-<%= review.id %>"></div>
+
+    <% if review.review_image.present? %>
+      <%= image_tag review.review_image_url, class: 'card-img-top', size: '300x200' %>
+    <% end %>
+
     <div id="js-textarea-review-box-<%= review.id %>" style="display: none;">
       <textarea id="js-textarea-review-<%= review.id %>" class="form-control mb-1"><%= review.body %></textarea>
       <button class="btn btn-light js-button-edit-review-cancel" data-review-id="<%= review.id %>">キャンセル</button>
@@ -19,9 +24,9 @@
   
   <script>
     $('#star-rate-<%= review.id %>').raty({
-      starOff:  '<%= asset_path('star-off.png') %>',
-      starOn : '<%= asset_path('star-on.png') %>',
-      starHalf: '<%= asset_path('star-half.png') %>',
+      starOff:  '<%= asset_path('reviews/star-off.png') %>',
+      starOn : '<%= asset_path('reviews/star-on.png') %>',
+      starHalf: '<%= asset_path('reviews/star-half.png') %>',
       half: true,
       readOnly: true,
       score: <%= review.rate %>,
