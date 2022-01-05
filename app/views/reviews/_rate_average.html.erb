@@ -1,0 +1,12 @@
+<div><%= "ユーザーの評価#{service.reviews.average(:rate).to_f.round(1)}点/5点" %></div>
+<div id="star-rate-<%= review.id %>"></div>
+<script>
+  $('#star-rate-<%= review.id %>').raty({
+    starOn: "<%= asset_path('reviews/star-on.png') %>",
+    starOff: "<%= asset_path('reviews/star-off.png') %>",
+    starHalf: "<%= asset_path('reviews/star-half.png') %>",
+    half: true,
+    readOnly: true,
+    score: "<%= service.reviews.average(:rate).to_f.round(1) %>",
+  });
+</script>

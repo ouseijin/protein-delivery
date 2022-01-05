@@ -3,6 +3,8 @@ class User < ApplicationRecord
   has_many :authentications, dependent: :destroy
   accepts_nested_attributes_for :authentications
 
+  has_many :reviews, dependent: :destroy
+
   mount_uploader :avatar, AvatarUploader
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
@@ -12,4 +14,8 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :email, presence: true
   validates :name, presence: true, length: { maximum: 50 } # Twitterに準拠
+
+  def own?(object)
+    id == object.user_id
+  end
 end
