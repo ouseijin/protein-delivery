@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_21_050537) do
+ActiveRecord::Schema.define(version: 2022_01_05_074625) do
 
   create_table "authentications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 2021_12_21_050537) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
+  end
+
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "menu_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["menu_id", "user_id"], name: "idx_menu_id_user_id", unique: true
+    t.index ["menu_id"], name: "index_likes_on_menu_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -41,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_12_21_050537) do
     t.string "title"
     t.text "body"
     t.float "rate", null: false
-    t.string "review_image"
+    t.json "review_images"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["service_id"], name: "index_reviews_on_service_id"
@@ -68,6 +78,8 @@ ActiveRecord::Schema.define(version: 2021_12_21_050537) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "likes", "menus"
+  add_foreign_key "likes", "users"
   add_foreign_key "menus", "services"
   add_foreign_key "reviews", "services"
   add_foreign_key "reviews", "users"

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   root 'static_pages#top'
   resources :services, only: [:index, :show] do
-    resources :menus, only: [:index]
     resources :reviews, only: [:create], shallow: true
+    resources :menus, only: [:index] do
+      resources :likes, only: [:create, :destroy]
+    end
   end
   resources :users, only: [:new, :create]
   resource :profile, only: [:show, :edit, :update]

@@ -4,6 +4,8 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :authentications
 
   has_many :reviews, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :like_menus, through: :likes, source: :menu
 
   mount_uploader :avatar, AvatarUploader
 
@@ -17,5 +19,17 @@ class User < ApplicationRecord
 
   def own?(object)
     id == object.user_id
+  end
+
+  def like(menu)
+    like_menus << menu
+  end
+
+  def unlike(menu)
+    like_menus.destroy(menu)
+  end
+
+  def like?(menu)
+    menu.likes.pluck(:user_id).include?(id)
   end
 end
