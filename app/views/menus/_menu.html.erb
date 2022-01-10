@@ -16,4 +16,5 @@
 <div class="col-sm-12 col-lg-4 mb-3">
   <%= image_tag "menus/#{menu.menu_image}", width: '60%', height: '60%' %>
   <%= render 'likes/like_button', { menu: menu } %>
+  <%= menu.likes.count%>
 </div>
