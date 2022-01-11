@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :like_menus, through: :likes, source: :menu
+  has_many :like_reviews, through: :likes, source: :review
 
   mount_uploader :avatar, AvatarUploader
 
@@ -29,7 +30,15 @@ class User < ApplicationRecord
     like_menus.destroy(menu)
   end
 
-  def like?(menu)
-    menu.likes.pluck(:user_id).include?(id)
+  def like?(menu_or_review)
+    menu_or_review.likes.pluck(:user_id).include?(id)
+  end
+
+  def like_review(review)
+    like_reviews << review
+  end
+
+  def unlike_review(review)
+    like_reviews.destroy(review)
   end
 end

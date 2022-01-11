@@ -22,12 +22,15 @@ ActiveRecord::Schema.define(version: 2022_01_05_074625) do
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "menu_id", null: false
+    t.bigint "menu_id"
+    t.bigint "review_id"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["menu_id", "user_id"], name: "idx_menu_id_user_id", unique: true
     t.index ["menu_id"], name: "index_likes_on_menu_id"
+    t.index ["review_id", "user_id"], name: "idx_review_id_user_id", unique: true
+    t.index ["review_id"], name: "index_likes_on_review_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
@@ -79,6 +82,7 @@ ActiveRecord::Schema.define(version: 2022_01_05_074625) do
   end
 
   add_foreign_key "likes", "menus"
+  add_foreign_key "likes", "reviews"
   add_foreign_key "likes", "users"
   add_foreign_key "menus", "services"
   add_foreign_key "reviews", "services"
