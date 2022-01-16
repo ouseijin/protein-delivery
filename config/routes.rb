@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resource :profile, only: [:show, :edit, :update]
   get 'all_menus', to: 'menus#all_menus'
+  get 'menu_rank', to: 'menus#menu_rank'
+  get 'service_rank', to: 'services#service_rank'
 
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'

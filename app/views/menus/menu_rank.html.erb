@@ -1,0 +1,7 @@
+<%= link_to 'サービスランキングへ', '/service_rank', class: 'nav-link' %>
+<div class="text-center bg-light">
+  <% @menu_like_ranks.each.with_index(1) do |rank, i| %>
+    <%= "第#{i}位"%>
+    <%= render 'menu', { menu: rank } %>
+  <% end %>
+<div>
