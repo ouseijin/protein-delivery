@@ -1,0 +1,5 @@
+<% if current_user&.menu_like?(menu) %>
+  <%= render 'menu_likes/unlike', { menu: menu, service: menu.service, menu_like: menu.menu_likes.find { |b| b.user_id == current_user.id } } %>
+<% else %>
+  <%= render 'menu_likes/like', { menu: menu, service: menu.service } %>
+<% end %>

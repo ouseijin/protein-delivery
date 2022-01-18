@@ -2,7 +2,7 @@ class Review < ApplicationRecord
   belongs_to :service
   belongs_to :user
 
-  has_many :likes, dependent: :destroy
+  has_many :review_likes, dependent: :destroy
 
   mount_uploaders :review_images, ReviewImageUploader
 

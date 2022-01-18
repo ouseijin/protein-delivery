@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   root 'static_pages#top'
   resources :services, only: [:index, :show] do
     resources :reviews, only: [:create] do
-      resources :likes, only: [:create, :destroy]
+      resources :review_likes, only: [:create, :destroy]
     end
     resources :menus, only: [:index] do
-      resources :likes, only: [:create, :destroy]
+      resources :menu_likes, only: [:create, :destroy]
     end
   end
   resources :users, only: [:new, :create]

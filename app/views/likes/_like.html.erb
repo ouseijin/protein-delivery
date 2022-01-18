@@ -1,9 +1,0 @@
-<% if current_page?("/services/#{service.id}") %>
-  <%= link_to polymorphic_path([service, review, :likes]), id: "js-like-button-for-menu-#{review.id}", method: :post do %>
-    <i class="far fa-heart like-btn"></i>
-  <% end %>
-<% else %>
-  <%= link_to polymorphic_path([service, menu, :likes]), id: "js-like-button-for-menu-#{menu.id}", class:"float-right", method: :post do %>
-    <i class="far fa-heart like-btn"></i>
-  <% end %>
-<% end %>
