@@ -10,6 +10,6 @@ class MenusController < ApplicationController
   end
 
   def menu_rank
-    @menu_like_ranks = Menu.find(Like.group(:menu_id).order('count(menu_id) desc').limit(5).pluck(:menu_id))
+    @menu_like_ranks = Menu.find(MenuLike.group(:menu_id).order('count(menu_id) desc').limit(5).pluck(:menu_id))
   end
 end

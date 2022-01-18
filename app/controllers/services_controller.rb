@@ -10,7 +10,7 @@ class ServicesController < ApplicationController
   end
 
   def service_rank
-    @service_like_ranks = Service.find(Review.group(:service_id) #名前ミス
+    @service_rate_ranks = Service.find(Review.group(:service_id)
                           .order('sum(rate)/count(rate) desc').limit(3).pluck(:service_id))
   end
 end
