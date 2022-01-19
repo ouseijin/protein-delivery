@@ -17,7 +17,6 @@
       <% end %>
 
       <%= render 'review_likes/like_button', { review: review } %>
-      <%= review.review_likes.count%>
 
     <div id="js-textarea-review-box-<%= review.id %>" style="display: none;">
       <textarea id="js-textarea-review-<%= review.id %>" class="form-control mb-1"><%= review.body %></textarea>

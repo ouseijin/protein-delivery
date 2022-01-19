@@ -1,0 +1,1 @@
+$("#js-like-button-for-menu-<%= @menu.id %>").replaceWith("<%= j(render('unlike', { menu: @menu, service: @menu.service, menu_like: @menu.menu_likes.find { |b| b.user_id == current_user.id } })) %>");

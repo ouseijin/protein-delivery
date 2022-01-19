@@ -1,0 +1,1 @@
+$("#js-like-button-for-review-<%= @review.id %>").replaceWith("<%= j(render('unlike', { review: @review, service: @review.service, review_like: @review.review_likes.find { |b| b.user_id == current_user.id } })) %>");
