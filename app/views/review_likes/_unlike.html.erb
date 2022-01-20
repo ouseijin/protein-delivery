@@ -1,0 +1,4 @@
+<%= link_to polymorphic_path([service, review, review_like]), id: "js-like-button-for-review-#{review.id}", method: :delete, remote: true do %>
+  <i class="fas fa-heart unlike-btn"></i>
+  <%= review.review_likes.count%>
+<% end %>

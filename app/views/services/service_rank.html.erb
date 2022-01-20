@@ -1,0 +1,20 @@
+<%= link_to 'メニューランキングへ', '/menu_rank', class: 'nav-link' %>
+<div class="text-center bg-light">
+  <% @service_rate_ranks.each.with_index(1) do |rank, i| %>
+    <%= "第#{i}位"%>
+    <%= rank.name %>
+    <div class="col-sm-12">
+      <%= rank.body %>
+      <%= render 'reviews/rate_average', { service: rank, review: Review.find(rank.id) } %>
+    </div>
+    <div class="col-sm-12">
+      <%= link_to '公式HPはコチラ！', rank.service_url, target: :_blank, rel: 'noopener noreferrer' %>
+    </div>
+    <div class="col-sm-12">
+      <%= image_tag "services/#{rank.service_image}", width: '30%', height: '30%' %>
+    </div>
+    <div class="col-sm-12">
+    <%= link_to 'このサービスのメニューはコチラ！', service_menus_path(rank) %>
+  </div>
+  <% end %>
+</div>

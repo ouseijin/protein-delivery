@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_21_050537) do
+ActiveRecord::Schema.define(version: 2022_01_18_070641) do
 
   create_table "authentications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 2021_12_21_050537) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
+  end
+
+  create_table "menu_likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "menu_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["menu_id", "user_id"], name: "idx_menu_id_user_id", unique: true
+    t.index ["menu_id"], name: "index_menu_likes_on_menu_id"
+    t.index ["user_id"], name: "index_menu_likes_on_user_id"
   end
 
   create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -35,13 +45,23 @@ ActiveRecord::Schema.define(version: 2021_12_21_050537) do
     t.index ["service_id"], name: "index_menus_on_service_id"
   end
 
+  create_table "review_likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "review_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["review_id", "user_id"], name: "idx_review_id_user_id", unique: true
+    t.index ["review_id"], name: "index_review_likes_on_review_id"
+    t.index ["user_id"], name: "index_review_likes_on_user_id"
+  end
+
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "service_id", null: false
     t.bigint "user_id", null: false
     t.string "title"
     t.text "body"
     t.float "rate", null: false
-    t.string "review_image"
+    t.json "review_images"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["service_id"], name: "index_reviews_on_service_id"
@@ -68,7 +88,11 @@ ActiveRecord::Schema.define(version: 2021_12_21_050537) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "menu_likes", "menus"
+  add_foreign_key "menu_likes", "users"
   add_foreign_key "menus", "services"
+  add_foreign_key "review_likes", "reviews"
+  add_foreign_key "review_likes", "users"
   add_foreign_key "reviews", "services"
   add_foreign_key "reviews", "users"
 end

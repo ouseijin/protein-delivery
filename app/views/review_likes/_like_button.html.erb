@@ -1,0 +1,5 @@
+<% if current_user&.review_like?(review) %>
+  <%= render 'review_likes/unlike', { review: review, service: review.service, review_like: review.review_likes.find { |b| b.user_id == current_user.id } } %>
+<% else %>
+  <%= render 'review_likes/like', { review: review, service: review.service } %>
+<% end %>
