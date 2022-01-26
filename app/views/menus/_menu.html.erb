@@ -1,4 +1,4 @@
-<div class="col-sm-12 col-lg-4 mb-3">
+<div class="<%= "col-sm-12 col-lg-4 mb-3" unless current_page?('/menu_rank') %>">
   <div class="card h-100">
     <div class="card-body">
       <% if current_page?('/all_menus')%>
@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="ml-4 col-sm-12　card-footer">
-      <%= image_tag "menus/#{menu.menu_image}", size: '330x200' %>
+      <%= image_tag "menus/#{menu.menu_image}", size: '300x200' %>
       <%= render 'menu_likes/like_button', { menu: menu } %>
     </div>
   </div>
