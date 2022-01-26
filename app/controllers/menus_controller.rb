@@ -5,8 +5,9 @@ class MenusController < ApplicationController
   end
 
   def index
-    @service = Service.find(params[:service_id])
-    @menus = Menu.where(service_id: @service).includes(:service, :menu_likes)
+    # @service = Service.find(params[:service_id])
+    @menus = Menu.where(service_id: params[:service_id]).includes(:service, :nutrients, :menu_likes)
+    # @nutrients = Nutrient.where(menu_id: @menus)
   end
 
   def menu_rank

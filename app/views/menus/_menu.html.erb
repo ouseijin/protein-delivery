@@ -1,19 +1,21 @@
-<% if current_page?('/all_menus')%>
-  <div class="col-sm-12">
-    <%= "<#{menu.service.name}のメニュー>" %>
-  </div>
-<% end %>
-<div class="col-sm-12">
-  <%= menu.name %>
-</div>
-<div class="col-sm-12">
-  <%= menu.size %>
-  <%= "#{menu.calorie}kcal" %>
-  <%= "タンパク質：#{menu.protein}g" %>
-  <%= "脂質：#{menu.fat}g" %>
-  <%= "炭水化物：#{menu.carb}g" %>
-</div>
 <div class="col-sm-12 col-lg-4 mb-3">
-  <%= image_tag "menus/#{menu.menu_image}", width: '60%', height: '60%' %>
-  <%= render 'menu_likes/like_button', { menu: menu } %>
+  <div class="card h-100">
+    <div class="card-body">
+      <% if current_page?('/all_menus')%>
+        <div class="col-sm-12">
+          <%= "<#{menu.service.name}のメニュー>" %>
+        </div>
+      <% end %>
+      <div class="col-sm-12">
+        <%= menu.name %>
+      </div>
+      <div>
+        <%= render partial: 'nutrient', collection: menu.nutrients %>
+      </div>
+    </div>
+    <div class="ml-4 col-sm-12　card-footer">
+      <%= image_tag "menus/#{menu.menu_image}", size: '330x200' %>
+      <%= render 'menu_likes/like_button', { menu: menu } %>
+    </div>
+  </div>
 </div>

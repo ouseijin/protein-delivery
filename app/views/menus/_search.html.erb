@@ -1,12 +1,10 @@
 <%= search_form_for @q, url: url do |f| %>
   <div class="input-group container my-3">
-    <%#= f.select :service_id_eq, options_from_collection_for_select(Service.all, :id, :name), { include_blank: 'サービス指定' } %>
-    <%#= f.select :service_id_eq, { 'マッスルデリ': 1, '筋肉食堂DELI': 2 }, { include_blank: 'サービス指定' } %>
     <%= f.select :service_id_eq, Service.pluck(:name, :id), { include_blank: 'サービス指定' } %>
-    <%= f.select :calorie_lteq, { '400kcal以下': 400, '500kcal以下': 500, '600kcal以下': 600 }, { include_blank: 'カロリー制限' } %>
-    <%= f.select :protein_gteq, {'タンパク質30g以上': 30.0, 'タンパク質40g以上': 40.0, 'タンパク質50g以上': 50.0 }, { include_blank: '必要なタンパク質' } %>
-    <%= f.select :fat_lteq, { '脂質10g以下': 10.0, '脂質20g以下': 20.0, '脂質30g以下': 30.0 }, { include_blank: '脂質制限' } %>
-    <%= f.select :carb_lteq, { '炭水化物40g以下': 40.0, '炭水化物50g以下': 50.0, '炭水化物60g以下': 60.0 }, { include_blank: '炭水化物制限' } %>
+    <%= f.select :nutrients_calorie_lteq, { '400kcal以下': 400, '500kcal以下': 500, '600kcal以下': 600 }, { include_blank: 'カロリー制限' } %>
+    <%= f.select :nutrients_protein_gteq, {'タンパク質30g以上': 30.0, 'タンパク質40g以上': 40.0, 'タンパク質50g以上': 50.0 }, { include_blank: '必要なタンパク質' } %>
+    <%= f.select :nutrients_fat_lteq, { '脂質10g以下': 10.0, '脂質20g以下': 20.0, '脂質30g以下': 30.0 }, { include_blank: '脂質制限' } %>
+    <%= f.select :nutrients_carb_lteq, { '炭水化物40g以下': 40.0, '炭水化物50g以下': 50.0, '炭水化物60g以下': 60.0 }, { include_blank: '炭水化物制限' } %>
     <%= f.search_field :name_cont, class: 'form-control', placeholder: '商品名（トマト、カレー、パスタ　など）' %>
     <div class="input-group-append">
       <%= f.submit '検索', class: 'btn btn-primary' %>

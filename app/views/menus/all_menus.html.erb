@@ -1,3 +1,9 @@
 <h1 class="text-center">全メニュー一覧</h1>
-<%= render 'search', q: @q, url: '/all_menus' %>
-<%= render @menus %>
+<div class="mb-5">
+  <%= render 'search', q: @q, url: '/all_menus' %>
+</div>
+<div class="col-12">
+  <div class="row">
+    <%= render @menus %>
+  </div>
+</div>
