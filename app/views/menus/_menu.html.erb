@@ -7,7 +7,7 @@
         </div>
       <% end %>
       <div class="col-sm-12">
-        <%= menu.name %>
+        <%= simple_format(menu.name) %>
       </div>
       <div>
         <%= render partial: 'nutrient', collection: menu.nutrients %>

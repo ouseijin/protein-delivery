@@ -16,5 +16,23 @@ Nutrient.seed(
     carb: 57.3,
     size: 'Regular',
     menu_id: 221
+  },
+  {
+    id: 223,
+    calorie: 368,
+    protein: 30.4,
+    fat: 3.3,
+    carb: 50.8,
+    size: 'Light',
+    menu_id: 222
+  },
+  {
+    id: 224,
+    calorie: 468,
+    protein: 43.1,
+    fat: 4.3,
+    carb: 58.6,
+    size: 'Regular',
+    menu_id: 222
   }
 )
