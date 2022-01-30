@@ -2,7 +2,7 @@
   <%= @service.name %>
   <div class="col-sm-12">
     <%= @service.body %>
-    <%= render 'reviews/rate_average', { service: @service, review: @review } %>
+    <%= render 'reviews/rate_average', { service: @service } %>
   </div>
   <div class="col-sm-12">
     <%= link_to '公式HPはコチラ！', @service.service_url, target: :_blank, rel: 'noopener noreferrer' %>
