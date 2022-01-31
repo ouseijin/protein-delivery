@@ -1,7 +1,7 @@
 <div class="text-center bg-light">
   <%= @service.name %>
   <div class="col-sm-12">
-    <%= @service.body %>
+    <%= simple_format(@service.body) %>
     <%= render 'reviews/rate_average', { service: @service } %>
   </div>
   <div class="col-sm-12">

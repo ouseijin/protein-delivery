@@ -23,7 +23,7 @@ Service.seed(
   {
     id: 4,
     name: 'GOFOOD',
-    body: '本格シェフが美味しさを追求し、健康食を研究する医師も認めた宅配食',
+    body: '本格シェフが美味しさを追求し、健康食を研究する医師も認めた低糖質・高タンパクな宅配食',
     service_url: 'https://gofood.jp/shop',
     service_image: 'gofood.jpg'
   },
@@ -50,9 +50,9 @@ Service.seed(
   },
   {
     id: 8,
-    name: 'MORE THAN DELI',
-    body: '”我慢”する食事管理ではなく、”楽しみ”になる食事管理を目指してつくられた高タンパク低カロリー宅配食',
-    service_url: 'https://morethandeli.co.jp/',
-    service_image: 'morethandeli.jpg'
+    name: 'Dietician',
+    body: 'カラダ作りの目的により選べるプランや、購入回数によって割引になる会員制度のある、高タンパク・低糖質の宅配食サービス',
+    service_url: 'https://dietician-family.jp/',
+    service_image: 'dietician.png'
   }
 )
