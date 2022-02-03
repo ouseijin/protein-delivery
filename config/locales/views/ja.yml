@@ -1,0 +1,17 @@
+ja:
+  views:
+    pagination:
+      first: "最初"
+      last: "最後"
+      previous: "« 前"
+      next: "次 »"
+      truncate: "..."
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "該当のメニューは０件でした"
+          one: "全<strong>1</strong>件のメニューを表示"
+          other: "全<strong>%{count}</strong>件のメニューを表示"
+      more_pages:
+        display_entries: "全%{total}件中　<strong>%{first}〜%{last}</strong>件のメニューを表示"
