@@ -168,7 +168,7 @@ Nutrient.seed(
     fat: 8.7,
     carb: 37.3,
     size: 'LEAN',
-    menu_id: 46 
+    menu_id: 46
   },
   {
     id: 50,
@@ -1064,7 +1064,7 @@ Nutrient.seed(
   {
     id: 149,
     calorie: 416,
-    protein:  30.4,
+    protein: 30.4,
     fat: 15.0,
     carb: 38.9,
     size: 'LEAN',
