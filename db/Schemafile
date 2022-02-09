@@ -67,6 +67,7 @@ create_table "services", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE
   t.text "body", null: false
   t.string "service_url", null: false
   t.string "service_image", null: false
+  t.string "service_logo", null: false
   t.datetime "created_at", precision: 6, null: false
   t.datetime "updated_at", precision: 6, null: false
 end
