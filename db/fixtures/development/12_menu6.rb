@@ -1,14 +1,17 @@
 Menu.seed(
-  {
-    id: 521,
-    name: 'チキンのクリーム煮弁当',
-    menu_image: 'chickennocream.jpg',
-    service_id: 6
-  },
-  {
-    id: 522,
-    name: '回鍋肉弁当',
-    menu_image: 'hoikorobentou.jpg',
-    service_id: 6
-  }
+ 
 )
+
+{
+  id: 251,
+  name: '皮なし鶏ムネ肉(塩麴)',
+  menu_image: 'kawanashitorimunesiokoji.png',
+  note: '【ゴールドジム×筋肉食堂】ダイエット3食セット<br>内にあるセットメニューの一つ',
+  service_id: 2
+},
+{
+  id: 252,
+  name: '皮なし鶏モモ肉ピリ辛チキン',
+  menu_image: 'kawanashitorimomopirikara.png',
+  service_id: 2
+}

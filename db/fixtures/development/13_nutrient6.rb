@@ -1,18 +1,21 @@
 Nutrient.seed(
-  {
-    id: 521,
-    calorie: 405,
-    protein: 28.3,
-    fat: 10.7,
-    carb: 46.6,
-    menu_id: 521
-  },
-  {
-    id: 522,
-    calorie: 438,
-    protein: 25.4,
-    fat: 13.9,
-    carb: 49.8,
-    menu_id: 522
-  }
+  
 )
+
+
+{
+  id: 221,
+  calorie: 291,
+  protein: 42.6,
+  fat: 4.3,
+  carb: 27.5,
+  menu_id: 121
+},
+{
+  id: 222,
+  calorie: 365,
+  protein: 34.5,
+  fat: 8.8,
+  carb: 38.9,
+  menu_id: 122
+}
