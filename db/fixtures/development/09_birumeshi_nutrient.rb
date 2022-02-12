@@ -1,3 +1,4 @@
+# menu_id: 429のみ１サイズ
 Nutrient.seed(
   {
     id: 421,

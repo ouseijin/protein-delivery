@@ -1,3 +1,4 @@
+# 公式サイトの写真に数字あるのと無いのがあることに注意（無い方を使った）
 Menu.seed(
   {
     id: 321,
@@ -19,7 +20,7 @@ Menu.seed(
   },
   {
     id: 324,
-    name: '牛豚合挽肉のチーズインハンバーグオニオンソース掛け',
+    name: '牛豚合挽肉の<br>チーズインハンバーグオニオンソース掛け',
     menu_image: 'gyubutaonionsauce.png',
     service_id: 3
   },
@@ -49,7 +50,7 @@ Menu.seed(
   },
   {
     id: 329,
-    name: '牛豚合挽肉のチーズインハンバーグ大豆クリームソース掛け',
+    name: '牛豚合挽肉の<br>チーズインハンバーグ大豆クリームソース掛け',
     menu_image: 'gyubutaaibikidaizucream.png',
     service_id: 3
   },
@@ -67,7 +68,7 @@ Menu.seed(
   },
   {
     id: 332,
-    name: '牛豚合挽肉のチーズインハンバーグ/オーロラソース掛け',
+    name: '牛豚合挽肉の<br>チーズインハンバーグ/オーロラソース掛け',
     menu_image: 'gyubutaaurorasauce.png',
     service_id: 3
   },
@@ -109,9 +110,8 @@ Menu.seed(
   },
   {
     id: 339,
-    name: 'ZENBヌードルパスタ・茄子とモッツァレラチーズのトマトソース',
+    name: 'ZENBヌードルパスタ・<br>茄子とモッツァレラチーズのトマトソース',
     menu_image: 'zenbnoodlenasutomozzarella.png',
     service_id: 3
   }
 )
-# 公式サイトの写真に数字あるのと無いのがあることに注意（無い方を使った）
