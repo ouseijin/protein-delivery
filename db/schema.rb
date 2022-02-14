@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_18_070641) do
+ActiveRecord::Schema.define(version: 2022_01_22_061035) do
 
   create_table "authentications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -45,6 +45,18 @@ ActiveRecord::Schema.define(version: 2022_01_18_070641) do
     t.index ["service_id"], name: "index_menus_on_service_id"
   end
 
+  create_table "nutrients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "menu_id", null: false
+    t.integer "calorie", null: false
+    t.float "protein", null: false
+    t.float "fat", null: false
+    t.float "carb", null: false
+    t.string "size"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["menu_id"], name: "index_nutrients_on_menu_id"
+  end
+
   create_table "review_likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "review_id", null: false
     t.bigint "user_id", null: false
@@ -61,7 +73,7 @@ ActiveRecord::Schema.define(version: 2022_01_18_070641) do
     t.string "title"
     t.text "body"
     t.float "rate", null: false
-    t.json "review_images"
+    t.string "review_image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["service_id"], name: "index_reviews_on_service_id"
@@ -91,6 +103,7 @@ ActiveRecord::Schema.define(version: 2022_01_18_070641) do
   add_foreign_key "menu_likes", "menus"
   add_foreign_key "menu_likes", "users"
   add_foreign_key "menus", "services"
+  add_foreign_key "nutrients", "menus"
   add_foreign_key "review_likes", "reviews"
   add_foreign_key "review_likes", "users"
   add_foreign_key "reviews", "services"
