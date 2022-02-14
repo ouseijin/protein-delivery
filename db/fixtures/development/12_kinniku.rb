@@ -1,4 +1,4 @@
-# id: 629と640の写真はほぼ同一、栄養素違い
+# id: 629と640の写真はほぼ同一、栄養素違い　→　一度id: 629のサバ塩を削除
 Menu.seed(
   {
     id: 621,
@@ -53,13 +53,6 @@ Menu.seed(
     id: 628,
     name: '鶏ムネ肉BBQ',
     menu_image: 'torimunenikubbq.jpg',
-    note: 'ダイエットオススメ料理セット<br>の中にあるセットメニューの一つ',
-    service_id: 6
-  },
-  {
-    id: 629,
-    name: '真サバの柔らか塩麴焼き（サラダ玄米使用）',
-    menu_image: 'masababnoyawarakashikoji.jpg',
     note: 'ダイエットオススメ料理セット<br>の中にあるセットメニューの一つ',
     service_id: 6
   },
@@ -135,9 +128,9 @@ Menu.seed(
   },
   {
     id: 640,
-    name: '真サバの柔らか塩麴焼き（通常の玄米使用）',
+    name: '真サバの柔らか塩麴焼き',
     menu_image: 'masababnoyawarakashikoji2.jpg',
-    note: 'オススメ料理セット、<br>バルクアップオススメ料理Aセット<br>の中にあるセットメニューの一つ',
+    note: 'ダイエットオススメ料理セット、<br>オススメ料理セット、<br>バルクアップオススメ料理Aセット<br>の中にあるセットメニューの一つ',
     service_id: 6
   },
   {

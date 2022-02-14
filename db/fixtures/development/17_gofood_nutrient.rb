@@ -1,3 +1,4 @@
+# id: 858の位置を870の前にサイズ違いで表記、
 Nutrient.seed(
   {
     id: 851,
@@ -54,14 +55,6 @@ Nutrient.seed(
     fat: 27.6,
     carb: 16.1,
     menu_id: 857
-  },
-  {
-    id: 858,
-    calorie: 246,
-    protein: 34.8,
-    fat: 9.1,
-    carb: 5.9,
-    menu_id: 858
   },
   {
     id: 859,
@@ -152,11 +145,21 @@ Nutrient.seed(
     menu_id: 869
   },
   {
+    id: 858,
+    calorie: 246,
+    protein: 34.8,
+    fat: 9.1,
+    carb: 5.9,
+    size: '通常',
+    menu_id: 870
+  },
+  {
     id: 870,
     calorie: 321,
     protein: 45.7,
     fat: 12.1,
     carb: 6.2,
+    size: '大盛り',
     menu_id: 870
   },
   {

@@ -1,3 +1,4 @@
+# id: 629と640の写真はほぼ同一、栄養素違い　→　一度id: 629の方サバ塩を削除
 Nutrient.seed(
   {
     id: 621,
@@ -62,14 +63,6 @@ Nutrient.seed(
     fat: 9.6,
     carb: 18.2,
     menu_id: 628
-  },
-  {
-    id: 629,
-    calorie: 528,
-    protein: 38.5,
-    fat: 27.9,
-    carb: 14.8,
-    menu_id: 629
   },
   {
     id: 630,

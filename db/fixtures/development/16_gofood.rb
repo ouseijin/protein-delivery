@@ -1,4 +1,4 @@
-# id: 871~873のスイーツにはnote記載
+# id: 858は削除しid: 870にサイズ違いで表記、　id: 871~873のスイーツにはnote記載
 Menu.seed(
   {
     id: 851,
@@ -40,12 +40,6 @@ Menu.seed(
     id: 857,
     name: '三代目ブロチキ　油淋鶏味',
     menu_image: 'sandaimeburochikiyuurin.jpg',
-    service_id: 8
-  },
-  {
-    id: 858,
-    name: 'ブロチキ',
-    menu_image: 'burochiki.jpg',
     service_id: 8
   },
   {
@@ -116,8 +110,8 @@ Menu.seed(
   },
   {
     id: 870,
-    name: 'ブロチキ（大盛り）',
-    menu_image: 'burochikioomori.jpg',
+    name: 'ブロチキ',
+    menu_image: 'burochiki.jpg',
     service_id: 8
   },
   {
