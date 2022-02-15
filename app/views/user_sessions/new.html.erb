@@ -2,6 +2,10 @@
   <div class="row">
     <div class=" col-md-10 offset-md-1 col-lg-8 offset-lg-2">
       <h1>ログイン</h1>
+      <div class='text-center'>
+        <%= link_to image_tag("users/twitter_signin.png"), auth_at_provider_path(provider: :twitter) %>
+        <%= link_to image_tag("users/google_signin.png"), auth_at_provider_path(provider: :google) %>
+      </div>
       <%= form_with url: login_path, local: true do |f| %>
         <div class="form-group">
           <%= f.label :email, User.human_attribute_name(:email) %>
@@ -17,11 +21,7 @@
       <% end %>
       <div class='text-center'>
         <%= link_to 'ユーザー登録ページへ', new_user_path %>
-        <a href="#">パスワードをお忘れの方はこちら</a>
-      </div>
-      <div class='text-center'>
-        <%= link_to 'Login with Twitter', auth_at_provider_path(provider: :twitter) %>
-        <%= link_to 'Login with Google', auth_at_provider_path(provider: :google) %>
+        <!--<a href="#">パスワードをお忘れの方はこちら</a>-->
       </div>
     </div>
   </div>
