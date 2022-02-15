@@ -47,8 +47,14 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+# production:
+  # <<: *default
+  # database: protein_delivery_production
+  # username: protein_delivery
+  # password: <%= ENV['PROTEIN_DELIVERY_DATABASE_PASSWORD'] %>
+
 production:
   <<: *default
-  database: protein_delivery_production
-  username: protein_delivery
-  password: <%= ENV['PROTEIN_DELIVERY_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
