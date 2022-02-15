@@ -1,22 +1,24 @@
 <div class="<%= "col-sm-12 col-lg-4 mb-3" unless current_page?('/menu_rank') %>">
-  <div class="card h-100">
-    <div class="card-body">
-      <div class="col-sm-12">
-        <%= "<#{menu.service.name}のメニュー>" if current_page?('/all_menus') %>
+  <%= link_to service_menu_path(menu.service, menu) do%>
+    <div class="card h-100">
+      <div class="card-body">
+        <div class="col-sm-12">
+          <%= "<#{menu.service.name}のメニュー>" if current_page?('/all_menus') %>
+        </div>
+        <div class="col-sm-12">
+          <%= simple_format(menu.name) %>
+        </div>
+        <div>
+          <%= render partial: 'nutrient', collection: menu.nutrients %>
+        </div>
+        <div class="col-sm-12 text-danger">
+          <%= simple_format(menu.note) %>
+        </div>
       </div>
-      <div class="col-sm-12">
-        <%= simple_format(menu.name) %>
-      </div>
-      <div>
-        <%= render partial: 'nutrient', collection: menu.nutrients %>
-      </div>
-      <div class="col-sm-12 text-danger">
-        <%= simple_format(menu.note) %>
+      <div class="ml-4 col-sm-12　card-footer">
+        <%= image_tag "menus/#{menu.menu_image}", size: '300x200' %>
+        <%= render 'menu_likes/like_button', { menu: menu } %>
       </div>
     </div>
-    <div class="ml-4 col-sm-12　card-footer">
-      <%= image_tag "menus/#{menu.menu_image}", size: '300x200' %>
-      <%= render 'menu_likes/like_button', { menu: menu } %>
-    </div>
-  </div>
+  <% end %>
 </div>

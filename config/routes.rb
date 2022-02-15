@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create] do
       resources :review_likes, only: [:create, :destroy]
     end
-    resources :menus, only: [:index] do
+    resources :menus, only: [:index, :show] do
       resources :menu_likes, only: [:create, :destroy]
     end
   end
