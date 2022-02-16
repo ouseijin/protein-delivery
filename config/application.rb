@@ -32,8 +32,6 @@ module ProteinDelivery
     # Don't generate system test files.
     config.generators.system_tests = nil
 
-    config.assets.initialize_on_precompile = false
-
     config.generators do |g|
       g.skip_routes true
       g.assets false
