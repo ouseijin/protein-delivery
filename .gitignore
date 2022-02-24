@@ -40,4 +40,6 @@ yarn-debug.log*
 /app/assets/images/services/*
 /app/assets/images/menus/*
 /db/scrape_test.rb
+/app/javascript/stylesheets
+/app/javascript/images
 /.env
