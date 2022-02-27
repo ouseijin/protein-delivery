@@ -34,8 +34,8 @@ gem 'carrierwave'
 
 gem 'dotenv-rails'
 
-gem 'asset_sync'
-gem 'fog-aws'
+# gem 'asset_sync'
+# gem 'fog-aws'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
