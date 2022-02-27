@@ -37,8 +37,7 @@ yarn-debug.log*
 .yarn-integrity
 
 .DS_Store
-/app/assets/images/services/*
-/app/assets/images/menus/*
+
 /db/scrape_test.rb
 /app/javascript/stylesheets
 /app/javascript/images
