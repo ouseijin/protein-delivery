@@ -34,7 +34,7 @@ gem 'carrierwave'
 
 gem 'dotenv-rails'
 
-# gem 'asset_sync'
+gem 'asset_sync'
 gem 'fog-aws'
 
 group :development, :test do
