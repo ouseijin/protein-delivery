@@ -1,4 +1,4 @@
-<%= link_to polymorphic_path([service, menu, :menu_likes]), id: "js-like-button-for-menu-#{menu.id}", data: create_alert_data, method: :post, remote: true do %>
+<%= link_to polymorphic_path([service, menu, :menu_likes]), id: "js-like-button-for-menu-#{menu.id}", data: create_alert_data, title: 'ログインページへの案内', method: :post, remote: true do %>
   <i class="far fa-heart like-btn"></i>
   <%= menu.menu_likes.length %>
 <% end %>
