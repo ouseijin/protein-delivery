@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
   def new
     @service = Service.find(params[:service_id])
     @review = Review.new
+    @reviews = @service.reviews.includes(:user, :review_likes).order(created_at: :desc)
   end
 
   def create
