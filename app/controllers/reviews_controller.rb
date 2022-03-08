@@ -1,6 +1,11 @@
 class ReviewsController < ApplicationController
   before_action :require_login
 
+  def new
+    @service = Service.find(params[:service_id])
+    @review = Review.new
+  end
+
   def create
     review = current_user.reviews.build(review_params)
     if review.save

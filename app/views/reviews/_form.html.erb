@@ -1,6 +1,6 @@
 <div class="row mb-3">
   <div class="col-lg-8 offset-lg-2">
-    <%= form_with model: review, url: [service, review], data: create_alert_data, local: true do |f| %>
+    <%= form_with model: review, url: [service, review], local: true do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <div class='form-group'>
         <%= f.label :title %>
