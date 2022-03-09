@@ -8,11 +8,14 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    review = current_user.reviews.build(review_params)
-    if review.save
-      redirect_to service_path(review.service), success: '口コミを投稿しました'
+    @review = current_user.reviews.build(review_params)
+    @service = Service.find(params[:service_id])
+    @reviews = @service.reviews.includes(:user, :review_likes).order(created_at: :desc)
+    if @review.save
+      redirect_to service_path(@review.service), success: '口コミを投稿しました'
     else
-      redirect_to service_path(review.service), success: '口コミの投稿に失敗しました'
+      flash.now[:warning] = '口コミ投稿に失敗しました'
+      render :new
     end
   end
 
