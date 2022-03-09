@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      review: '口コミ'
     attributes:
       user:
         email: 'メールアドレス'
@@ -9,3 +10,23 @@ ja:
         password_confirmation: 'パスワード確認'
         name: '名前'
         avatar: 'アイコン'
+      review:
+        title: 'タイトル'
+        body: '口コミ本文'
+        rate: '星による5段階評価'
+        review_images: '投稿写真'
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              format: '%{message}'
+              blank: '%{attribute}を入力してください。'
+              taken: 'この%{attribute}は既に存在します。他のメールアドレスをご使用下さい'
+        review:
+          attributes:
+            rate:
+              format: '%{message}'
+              blank: '%{attribute}を入力してください。'
+              not_a_number: '%{attribute}は星1~5の内いずれかを入力してください。'
+        
