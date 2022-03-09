@@ -1,16 +1,14 @@
 class ReviewsController < ApplicationController
   before_action :require_login
+  before_action :set_service, only: [:new, :create]
+  before_action :set_reviews, only: [:new, :create]
 
   def new
-    @service = Service.find(params[:service_id])
     @review = Review.new
-    @reviews = @service.reviews.includes(:user, :review_likes).order(created_at: :desc)
   end
 
   def create
     @review = current_user.reviews.build(review_params)
-    @service = Service.find(params[:service_id])
-    @reviews = @service.reviews.includes(:user, :review_likes).order(created_at: :desc)
     if @review.save
       redirect_to service_path(@review.service), success: '口コミを投稿しました'
     else
@@ -24,5 +22,13 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:title, :body, :rate, { review_images: [] },
                                    :review_images_cache).merge(service_id: params[:service_id])
+  end
+
+  def set_service
+    @service = Service.find(params[:service_id])
+  end
+
+  def set_reviews
+    @reviews = @service.reviews.includes(:user, :review_likes).order(created_at: :desc)
   end
 end
