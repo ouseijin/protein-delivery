@@ -1,7 +1,9 @@
 <div class="row mb-3">
   <div class="col-lg-8 offset-lg-2">
     <%= form_with model: review, url: [service, review], local: true do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
+      <div class="text-left bg-light">
+        <%= render 'shared/error_messages', object: f.object %>
+      </div>
       <div class='form-group'>
         <%= f.label :title %>
         <%= f.text_field :title, class: 'form-control mb-3', id: 'js-new-review-title', placeholder: 'レビューのタイトルをお願いします' %>
@@ -29,6 +31,7 @@
     
   </div>
   <script>
+  $('#star').empty();
     $('#star').raty({
       starOn: "<%= asset_path('reviews/star-on.png') %>",
       starOff: "<%= asset_path('reviews/star-off.png') %>",

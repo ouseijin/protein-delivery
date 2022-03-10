@@ -26,6 +26,7 @@
   </td>
   
   <script>
+  $('#star-rate-<%= review.id %>').empty();
     $('#star-rate-<%= review.id %>').raty({
       starOff:  '<%= asset_path('reviews/star-off.png') %>',
       starOn : '<%= asset_path('reviews/star-on.png') %>',

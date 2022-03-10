@@ -6,7 +6,7 @@ ruby '3.0.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.4', '>= 6.0.4.1'
 # Use mysql as the database for Active Record
-# gem 'mysql2', '>= 0.4.4'
+gem 'mysql2', '>= 0.4.4'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -32,9 +32,10 @@ gem 'rails-i18n'
 
 gem 'carrierwave'
 
-group :production do
-  gem 'pg'
-end
+gem 'dotenv-rails'
+
+gem 'asset_sync'
+gem 'fog-aws'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -42,7 +43,6 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-performance', require: false
-  gem 'mysql2', '>= 0.4.4'
 end
 
 group :development do
@@ -54,11 +54,13 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+# gem 'jquery-rails'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap', '~> 4.5.0'
-gem 'jquery-rails'
+
 gem 'seed-fu'
 gem 'ridgepole'
 gem 'nokogiri'

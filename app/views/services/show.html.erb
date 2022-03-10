@@ -4,13 +4,16 @@
     <%= simple_format(@service.body) %>
     <%= render 'reviews/rate_average', { service: @service } %>
   </div>
-  <div class="col-sm-12">
+  <div class="col-sm-12 my-4">
     <%= link_to '公式HPはコチラ！', @service.service_url, target: :_blank, rel: 'noopener noreferrer' %>
   </div>
   <%= image_tag "services/#{@service.service_image}", width: '60%', height: '60%' %>
-  <div class="col-sm-12">
+  <div class="col-sm-12 my-4">
     <%= link_to 'このサービスのメニューはコチラ！', service_menus_path(@service) %>
   </div>
-  <%= render 'reviews/form', { service: @service, review: @review } %>
+  <div class="my-5">
+    <%= link_to '口コミを投稿する！', new_service_review_path(@service), data: create_alert_data %>
+  </div>
+  <%#= render 'reviews/form', { service: @service, review: @review } %>
   <%= render 'reviews/reviews', { reviews: @reviews } %>
 </div>

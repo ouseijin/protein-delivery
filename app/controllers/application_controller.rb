@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   private
 
   def not_authenticated
-    redirect_to login_path, info: 'こちらは、ログインしている場合に使える機能です。ぜひ、ログインして使って下さい。'
+    redirect_to login_path, info: 'こちらは、ログインページです。　SNS認証もございますので、ぜひお使い下さい。'
   end
 end

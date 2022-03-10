@@ -5,8 +5,7 @@ class ServicesController < ApplicationController
 
   def show
     @service = Service.find(params[:id])
-    @review = Review.new
-    @reviews = @service.reviews.includes(:user).order(created_at: :desc)
+    @reviews = @service.reviews.includes(:user, :review_likes).order(created_at: :desc)
   end
 
   def service_rank

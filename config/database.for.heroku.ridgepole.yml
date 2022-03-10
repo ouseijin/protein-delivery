@@ -1,0 +1,2 @@
+production:
+  url: <%= ENV['MYSQL_URL'] %>
