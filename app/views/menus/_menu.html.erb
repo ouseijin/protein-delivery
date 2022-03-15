@@ -1,11 +1,11 @@
 <div class="<%= "col-sm-12 col-lg-4 mb-3" unless current_page?('/menu_rank') %>">
-  <%= link_to service_menu_path(menu.service, menu) do%>
-    <div class="card h-100">
-      <% if current_page?('/all_menus') %>
-        <div class="col-sm-12 card-header text-center">
-            <%= "#{menu.service.name}のメニュー"  %>
-        </div>
-      <% end %>
+  <div class="card">
+    <% if current_page?('/all_menus') %>
+      <div class="card-header text-center">
+          <%= "#{menu.service.name}のメニュー"  %>
+      </div>
+    <% end %>
+    <%= link_to service_menu_path(menu.service, menu), class: "text-dark card-link" do %>
       <div class="card-body card-size">
         <div class="col-sm-12">
           <%= simple_format(menu.name) %>
@@ -21,6 +21,6 @@
         <%= image_tag "menus/#{menu.menu_image}", size: '300x200' %>
         <%= render 'menu_likes/like_button', { menu: menu } %>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
