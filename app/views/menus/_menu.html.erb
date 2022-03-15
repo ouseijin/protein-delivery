@@ -1,10 +1,6 @@
 <div class="<%= "col-sm-12 col-lg-4 mb-3" unless current_page?('/menu_rank') %>">
   <div class="card">
-    <% if current_page?('/all_menus') %>
-      <div class="card-header text-center">
-          <%= "#{menu.service.name}のメニュー"  %>
-      </div>
-    <% end %>
+    <%= link_to "#{menu.service.name}のメニュー", service_path(menu.service), class: "card-header text-center" if current_page?('/all_menus') %>
     <%= link_to service_menu_path(menu.service, menu), class: "text-dark card-link" do %>
       <div class="card-body card-size">
         <div class="col-sm-12">
