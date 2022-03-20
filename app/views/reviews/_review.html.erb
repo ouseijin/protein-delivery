@@ -24,6 +24,21 @@
         <button class="btn btn-light js-button-edit-review-cancel" data-review-id="<%= review.id %>">キャンセル</button>
         <button class="btn btn-success js-button-review-update" data-review-id="<%= review.id %>">更新</button>
       </div>
+      <% if current_user.own?(review) %>
+        <ul class="list-inline justify-content-center" style="float: right;">
+          <li class="list-inline-item">
+            <a href="#" class='js-edit-review-button' data-review-id="<%= review.id %>">
+              <%#= icon 'fa', 'pen' %>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to service_review_path(review.service, review), class:'js-delete-review-button', method: :delete, data: delete_confirm, remote: true do %>
+              <i class="fas fa-trash-alt"></i>
+              <span>削除する</span>
+            <% end %>
+          </li>
+        </ul>
+      <% end %>
     </div>
   </td>
   
@@ -38,21 +53,4 @@
       score: <%= review.rate %>,
     });
   </script>  
-
-  <%# if current_user.own?(review) %>
-    <td class="action">
-      <ul class="list-inline justify-content-center" style="float: right;">
-        <li class="list-inline-item">
-          <a href="#" class='js-edit-review-button' data-review-id="<%= review.id %>">
-            <%#= icon 'fa', 'pen' %>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a href="#" class='js-delete-review-button' data-review-id="<%= review.id %>">
-            <%#= icon 'fas', 'trash' %>
-          </a>
-        </li>
-      </ul>
-    </td>
-  <%# end %>
 </tr>

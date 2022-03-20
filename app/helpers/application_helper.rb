@@ -11,4 +11,13 @@ module ApplicationHelper
       }
     end
   end
+
+  def delete_confirm
+    {
+      confirm: "【確認】こちらの口コミを削除してもよろしいですか？",
+      cancel: 'キャンセル',
+      commit: '削除する',
+      title: '口コミの削除確認'
+    }
+  end
 end
