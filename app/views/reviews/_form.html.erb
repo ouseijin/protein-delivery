@@ -19,7 +19,8 @@
       <div class="form-group">
         <%= f.label :review_images %>
         <%= f.file_field :review_images, multiple: true, onchange: 'previewFileWithId(preview)', class: 'form-control mb-3', accept: 'image/*' %>
-        <%= f.hidden_field :review_images_cache %>
+        <%#= f.hidden_field :review_images_cache %>
+        <%#= 枚数制限のため、一時的にcache機能をstop %>
       </div>
       <div class='mt-3 mb-3'>
         <%= image_tag 'reviews/preview.png',
