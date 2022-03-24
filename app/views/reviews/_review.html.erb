@@ -3,25 +3,42 @@
     <%= image_tag review.user.avatar_url, class: 'rounded-circle', size: '50x50' %>
   </td>
   <td>
-    <h3 class="small"><%= review.user.name %></h3>
-    <div id="js-review-<%= review.id %>">
-      <%= simple_format(review.title) %>
-      <%= simple_format(review.body) %>
-    </div>
-    <h4 class="mb-3">評価：<%= review.rate %>点</h4>
-    <div id="star-rate-<%= review.id %>"></div>
-
-
+    <h6 class="small text-left pt-3"><%= review.user.name %></h6>
+    <div class='arrow_box'>
+      <div id="js-review-<%= review.id %>">
+        <h4><%= simple_format(review.title) %></h4>
+        <%= simple_format(review.body) %>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div class="m-3" id="star-rate-<%= review.id %>"></div>
+        <h4 class="my-3"><%= review.rate %>点</h4>
+      </div>
       <% review.review_images.each do |review_image| %>
-        <%= image_tag review_image.to_s, class: 'card-img-top', size: '300x200' if review.review_images.present? %>
+        <%= image_tag review_image.to_s, size: '300x200' if review.review_images.present? %>
       <% end %>
-
-      <%= render 'review_likes/like_button', { review: review } %>
-
-    <div id="js-textarea-review-box-<%= review.id %>" style="display: none;">
-      <textarea id="js-textarea-review-<%= review.id %>" class="form-control mb-1"><%= review.body %></textarea>
-      <button class="btn btn-light js-button-edit-review-cancel" data-review-id="<%= review.id %>">キャンセル</button>
-      <button class="btn btn-success js-button-review-update" data-review-id="<%= review.id %>">更新</button>
+      <div class="pt-4">
+        <%= render 'review_likes/like_button', { review: review } %>
+      </div>
+      <div id="js-textarea-review-box-<%= review.id %>" style="display: none;">
+        <textarea id="js-textarea-review-<%= review.id %>" class="form-control mb-1"><%= review.body %></textarea>
+        <button class="btn btn-light js-button-edit-review-cancel" data-review-id="<%= review.id %>">キャンセル</button>
+        <button class="btn btn-success js-button-review-update" data-review-id="<%= review.id %>">更新</button>
+      </div>
+      <% if current_user.own?(review) %>
+        <ul class="list-inline justify-content-center" style="float: right;">
+          <li class="list-inline-item">
+            <a href="#" class='js-edit-review-button' data-review-id="<%= review.id %>">
+              <%#= icon 'fa', 'pen' %>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to service_review_path(review.service, review), class:'js-delete-review-button', method: :delete, data: delete_confirm, remote: true do %>
+              <i class="fas fa-trash-alt"></i>
+              <span>削除する</span>
+            <% end %>
+          </li>
+        </ul>
+      <% end %>
     </div>
   </td>
   
@@ -36,21 +53,4 @@
       score: <%= review.rate %>,
     });
   </script>  
-
-  <%# if current_user.own?(review) %>
-    <td class="action">
-      <ul class="list-inline justify-content-center" style="float: right;">
-        <li class="list-inline-item">
-          <a href="#" class='js-edit-review-button' data-review-id="<%= review.id %>">
-            <%#= icon 'fa', 'pen' %>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a href="#" class='js-delete-review-button' data-review-id="<%= review.id %>">
-            <%#= icon 'fas', 'trash' %>
-          </a>
-        </li>
-      </ul>
-    </td>
-  <%# end %>
 </tr>

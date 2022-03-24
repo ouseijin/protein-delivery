@@ -28,5 +28,6 @@ ja:
             rate:
               format: '%{message}'
               blank: '%{attribute}を入力してください。'
-              not_a_number: '%{attribute}は星1~5の内いずれかを入力してください。'
+              not_a_number: '%{attribute}は星1~5の範囲内で入力してください。'
+              greater_than_or_equal_to: '%{attribute}は星1以上でお願いします。'
         
