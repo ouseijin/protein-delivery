@@ -119,7 +119,7 @@ Rails.application.config.sorcery.configure do |config|
   config.twitter.secret = Rails.application.credentials.dig(:twitter, :secret_key)
   config.twitter.user_info_path = "/1.1/account/verify_credentials.json?include_email=true"
   config.twitter.callback_url = if Rails.env.production?
-                                  'https://protein-delivery.herokuapp.com/oauth/callback?provider=twitter'
+                                  'https://www.protein-delivery.net/oauth/callback?provider=twitter'
                                 else
                                   'http://127.0.0.1:3000/oauth/callback?provider=twitter'
                                 end
@@ -170,7 +170,7 @@ Rails.application.config.sorcery.configure do |config|
   config.google.key = Rails.application.credentials.dig(:google, :client_id)
   config.google.secret = Rails.application.credentials.dig(:google, :client_secret)
   config.google.callback_url = if Rails.env.production?
-                                 'https://protein-delivery.herokuapp.com/oauth/callback?provider=google'
+                                 'https://www.protein-delivery.net/oauth/callback?provider=google'
                                else
                                  'http://127.0.0.1:3000/oauth/callback?provider=google'
                                end
