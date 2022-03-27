@@ -1,5 +1,15 @@
 <div class="top-wrapper">
   <div class="top-inner-text">
     <p>Protein-delivery</p>
+    <h4>身体づくりに励むあなたへの<br>高タンパク宅配食専門レビューサイト</h4>
+  </div>
+  <div class="top-button">
+    <h5 class="mb-3">サービスやメニューを知りたい方はコチラから</h5>
+    <div class="btn-group mb-4">
+      <%= link_to "宅配サービス一覧へ", services_path, class: 'btn btn-outline-warning mr-4' %>
+      <%= link_to "メニュー一覧へ", '/all_menus', class: 'btn btn-outline-warning ml-4' %>
+    </div>
+    <h5 class="mb-3">口コミやいいねしたり、ランキングを見たい方はコチラから</h5>
+    <%= link_to "ログインページへ", login_path, class: 'btn btn-outline-warning' %>
   </div>
 </div>
