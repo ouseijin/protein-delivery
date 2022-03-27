@@ -24,7 +24,7 @@
         <button class="btn btn-light js-button-edit-review-cancel" data-review-id="<%= review.id %>">キャンセル</button>
         <button class="btn btn-success js-button-review-update" data-review-id="<%= review.id %>">更新</button>
       </div>
-      <% if current_user.own?(review) %>
+      <% if current_user&.own?(review) %>
         <ul class="list-inline justify-content-center" style="float: right;">
           <li class="list-inline-item">
             <a href="#" class='js-edit-review-button' data-review-id="<%= review.id %>">
