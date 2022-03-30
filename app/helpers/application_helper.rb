@@ -5,7 +5,7 @@ module ApplicationHelper
       title: '身体づくりに励むあなたへの高タンパク宅配食レビューサイト',
       reverse: true,
       charset: 'utf-8',
-      description: 'protein-deliveryは高タンパクな宅配食専門のレビューサイトです。皆で良かった商品の情報を提供し合いましょう！',
+      description: 'protein-deliveryは高タンパクな宅配食専門のレビューサイトです。皆で良かったメニューやサービスを教え合いましょう！',
       keywords: 'たんぱく質,筋トレ,ダイエット,宅配食,ボディメイク,口コミ,protein,diet',
       canonical: 'https://www.protein-delivery.net',
       separator: '|',
@@ -15,7 +15,7 @@ module ApplicationHelper
       og: {
         site_name: 'protein-delivery',
         title: '身体づくりに励むあなたへの高タンパク宅配食レビューサイト',
-        description: 'protein-deliveryは高タンパクな宅配食専門のレビューサイトです。皆で良かった商品の情報を提供し合いましょう！',
+        description: 'protein-deliveryは高タンパクな宅配食専門のレビューサイトです。皆で良かったメニューやサービスを教え合いましょう！',
         type: 'website',
         url: 'https://www.protein-delivery.net',
         image: image_url('ogp.jpg'),
