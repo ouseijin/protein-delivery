@@ -1,11 +1,11 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      site: 'protein-delivery',
+      site: 'Protein-delivery',
       title: '身体づくりに励むあなたへの高タンパク宅配食レビューサイト',
       reverse: true,
       charset: 'utf-8',
-      description: 'protein-deliveryは高タンパクな宅配食専門のレビューサイトです。皆で良かったメニューやサービスを教え合いましょう！',
+      description: 'Protein-deliveryは高タンパクな宅配食専門のレビューサイトです。皆で良かったメニューやサービスを教え合いましょう！',
       keywords: 'たんぱく質,筋トレ,ダイエット,宅配食,ボディメイク,口コミ,protein,diet',
       canonical: 'https://www.protein-delivery.net',
       separator: '|',
@@ -13,9 +13,9 @@ module ApplicationHelper
         { href: image_url('icon.png') }
       ],
       og: {
-        site_name: 'protein-delivery',
+        site_name: 'Protein-delivery',
         title: '身体づくりに励むあなたへの高タンパク宅配食レビューサイト',
-        description: 'protein-deliveryは高タンパクな宅配食専門のレビューサイトです。皆で良かったメニューやサービスを教え合いましょう！',
+        description: 'Protein-deliveryは高タンパクな宅配食専門のレビューサイトです。皆で良かったメニューやサービスを教え合いましょう！',
         type: 'website',
         url: 'https://www.protein-delivery.net',
         image: image_url('ogp.jpg'),
