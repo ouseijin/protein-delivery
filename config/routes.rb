@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'menu_rank', to: 'menus#menu_rank'
   get 'service_rank', to: 'services#service_rank'
 
+  get 'user_policy', to: 'static_pages#user_policy'
+
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
