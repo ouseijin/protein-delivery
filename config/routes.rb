@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   get 'user_policy', to: 'static_pages#user_policy'
   get 'privacy_policy', to: 'static_pages#privacy_policy'
+  get 'inquiry', to: 'static_pages#inquiry'
 
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
