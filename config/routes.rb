@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'service_rank', to: 'services#service_rank'
 
   get 'user_policy', to: 'static_pages#user_policy'
+  get 'privacy_policy', to: 'static_pages#privacy_policy'
 
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
