@@ -13,10 +13,31 @@
       <% end %>
     </li>
   </ul>
-  <div class="text-center">
+  <div class="text-center bg-light">
     <% @menu_like_ranks.each.with_index(1) do |rank, i| %>
-      <%= "第#{i}位"%>
-      <%= render 'menu', { menu: rank } %>
+      <div class="py-5 border border-top-0">
+        <%= "第#{i}位"%>
+        <%#= render 'menu', { menu: rank } %>
+        <%= link_to "#{rank.service.name}のメニュー", service_path(rank.service), class: "card-header text-center" if current_page?('/all_menus') %>
+        <%# ここらへんにserviceのロゴとか入れたい %>
+        <%= link_to service_menu_path(rank.service, rank), class: "text-dark card-link" do %>
+          <div class="card-body card-size">
+            <div class="col-sm-12">
+              <%= simple_format(rank.name) %>
+            </div>
+            <div>
+              <%= render partial: 'nutrient', collection: rank.nutrients %>
+            </div>
+            <div class="col-sm-12 text-danger">
+              <%= simple_format(rank.note) %>
+            </div>
+          </div>
+          <div class="ml-4 col-sm-12 footer">
+            <%= image_tag "menus/#{rank.menu_image}", size: '300x200' %>
+            <%= render 'menu_likes/like_button', { menu: rank } %>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   <div>
 </div>

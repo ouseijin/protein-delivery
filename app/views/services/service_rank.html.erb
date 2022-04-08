@@ -13,11 +13,13 @@
       <% end %>
     </li>
   </ul>
-  <div class="text-center bg-light border border-top-0">
+  <div class="text-center bg-light">
     <% @service_rate_ranks.each.with_index(1) do |rank, i| %>
-    <div class="py-5">
-      <%= "第#{i}位"%>
-      <%= rank.name %>
+    <div class="py-5 border border-top-0">
+      <div class="py-4">
+        <%= "第#{i}位"%>
+        <%= rank.name %>
+      </div>
       <div class="col-sm-12">
         <%= rank.body %>
         <%= render 'reviews/rate_average', { service: rank } %>
