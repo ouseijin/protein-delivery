@@ -1,7 +1,17 @@
 <div class="container">
   <ul class="nav nav-tabs nav-justified">
-    <li class="nav-item"><%= link_to 'サービスランキング', service_rank_path, class: 'nav-link' %></li>
-    <li class="nav-item"><%= link_to 'メニューランキング', menu_rank_path, class: 'nav-link font-weight-bold active' %></li>
+    <li class="nav-item">
+      <%= link_to service_rank_path, class: 'nav-link' do %>
+        <i class="fas fa-truck"></i>
+        <span>サービスランキング</span>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to menu_rank_path, class: 'nav-link font-weight-bold active' do %>
+        <i class="fas fa-utensils"></i>
+        <span>メニューランキング</span>
+      <% end %>
+    </li>
   </ul>
   <div class="text-center">
     <% @menu_like_ranks.each.with_index(1) do |rank, i| %>
