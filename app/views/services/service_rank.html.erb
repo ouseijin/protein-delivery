@@ -1,4 +1,9 @@
 <div class="container">
+  <%# タイトル 共通化したい %>
+  <div class="rank-title">
+    <%= render 'shared/title', text: 'ランキング' %>
+  </div>
+
   <ul class="nav nav-tabs nav-justified">
     <li class="nav-item">
       <%= link_to service_rank_path, class: 'nav-link font-weight-bold active' do %>
