@@ -6,7 +6,7 @@
 	background-repeat: no-repeat;
 	background-position: top center;
 	position: relative;
-	@include media-breakpoint-down(md){
+	@media (max-width: 767px){
 		background-position: top center !important;
 	}
 	.overlay{
@@ -18,7 +18,7 @@
 		bottom: 0;
 		content: '';
 		opacity: .3;
-		background: $black;
+		background: black;
 	}
 	&.hero-wrap-2{
 		height: 200px;
@@ -26,17 +26,17 @@
 			height: 200px;
 			.bread{
 				font-weight: 900;
-				color: $white;
+				color: white;
 			}
 			.breadcrumbs{
 				text-transform: uppercase;
 				font-size: 13px;
 				letter-spacing: 1px;
 				span{
-					color: $white;
+					color: white;
 					border-bottom: 2px solid rgba(255,255,255,.1);
 					a{
-						color: $white;
+						color: white;
 					}
 				}
 			}
