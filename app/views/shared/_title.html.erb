@@ -4,14 +4,16 @@
     <div class="row no-gutters slider-text align-items-center justify-content-center">
       <div class="col-md-9 ftco-animate text-center">
         <h1 class="mb-2 bread"><%= text %></h1>
-        <p class="breadcrumbs"><span class="mr-2">
-          <%= link_to root_path do %>
-            <i class="fas fa-home"></i>
-            <span>Home</span>
-          <% end %>
-          <span class="px-2">></span>
-          <i class="fas fa-medal"></i>
-          <span><%= text %></span>
+        <p class="breadcrumbs">
+          <span>
+            <%= link_to root_path do %>
+              <i class="fas fa-home"></i>
+              <%= 'Home' %>
+            <% end %>
+            <i class="fas fa-angle-double-right mx-2"></i>
+            <i class="fas fa-crown"></i>
+            <%= text %>
+          </span>
         </p>
       </div>
     </div>
