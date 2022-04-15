@@ -1,4 +1,9 @@
-<h1 class="text-center">メニュー一覧</h1>
+<div class="container">
+  <%# タイトル %>
+  <div class="menu-title">
+    <%= render 'shared/title', text: 'メニュー一覧', html: ''.html_safe %>
+  </div>
+</div>
 <div class="mb-5">
   <%= render 'search', q: @q, url: '/all_menus' %>
 </div>
