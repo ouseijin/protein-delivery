@@ -1,20 +1,45 @@
-<%= link_to 'メニューランキングへ', '/menu_rank', class: 'nav-link' %>
-<div class="text-center bg-light">
-  <% @service_rate_ranks.each.with_index(1) do |rank, i| %>
-    <%= "第#{i}位"%>
-    <%= rank.name %>
-    <div class="col-sm-12">
-      <%= rank.body %>
-      <%= render 'reviews/rate_average', { service: rank } %>
-    </div>
-    <div class="col-sm-12">
-      <%= link_to '公式HPはコチラ！', rank.service_url, target: :_blank, rel: 'noopener noreferrer' %>
-    </div>
-    <div class="col-sm-12">
-      <%= image_tag "services/#{rank.service_image}", width: '30%', height: '30%' %>
-    </div>
-    <div class="col-sm-12">
-    <%= link_to 'このサービスのメニューはコチラ！', service_menus_path(rank) %>
+<div class="container">
+  <%# タイトル 共通化したい %>
+  <div class="rank-title">
+    <%= render 'shared/title', text: 'ランキング' %>
   </div>
-  <% end %>
+
+  <ul class="nav nav-tabs nav-justified">
+    <li class="nav-item">
+      <%= link_to service_rank_path, class: 'nav-link font-weight-bold active' do %>
+        <i class="fas fa-truck"></i>
+        <span>サービスランキング</span>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to menu_rank_path, class: 'nav-link' do %>
+        <i class="fas fa-utensils"></i>
+        <span>メニューランキング</span>
+      <% end %>
+    </li>
+  </ul>
+  <div class="text-center bg-light">
+    <% @service_rate_ranks.each.with_index(1) do |rank, i| %>
+    <div class="py-5 border border-top-0">
+      <div class="py-4">
+        <i class="fas fa-crown"></i>
+        <%= "第#{i}位"%>
+        <%= rank.name %>
+      </div>
+      <div class="col-sm-12">
+        <%= rank.body %>
+        <%= render 'reviews/rate_average', { service: rank } %>
+      </div>
+      <div class="col-sm-12">
+        <%= link_to '公式HPはコチラ！', rank.service_url, target: :_blank, rel: 'noopener noreferrer' %>
+      </div>
+      <div class="col-sm-12">
+        <%= image_tag "services/#{rank.service_image}", width: '30%', height: '30%' %>
+      </div>
+      <div class="col-sm-12">
+        <%= link_to 'このサービスのメニューはコチラ！', service_menus_path(rank) %>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>

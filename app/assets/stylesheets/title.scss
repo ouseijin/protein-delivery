@@ -1,0 +1,49 @@
+.hero-wrap{
+	width: 100%;
+	height: 100%;
+	position: inherit;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top center;
+	position: relative;
+	@media (max-width: 767px){
+		background-position: top center !important;
+	}
+	.overlay{
+		position: absolute;
+		// width: 50%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		content: '';
+		opacity: .3;
+		background: black;
+	}
+	&.hero-wrap-2{
+		height: 200px;
+		.slider-text{
+			height: 200px;
+			.bread{
+				font-weight: 900;
+				color: white;
+			}
+			.breadcrumbs{
+				text-transform: uppercase;
+				font-size: 13px;
+				letter-spacing: 1px;
+				span{
+					color: white;
+					border-bottom: 2px solid rgba(255,255,255,.1);
+					a{
+						color: white;
+					}
+				}
+			}
+		}
+	}
+}
+
+.rank-title {
+  background-image: url("title/rank.png");
+}
