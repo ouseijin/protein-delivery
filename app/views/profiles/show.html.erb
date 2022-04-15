@@ -5,22 +5,22 @@
   </div>
 
   <div class="row mt-3">
-    <div class="col-md-8 offset-md-2">
+    <div class="col-md-10 offset-md-1">
       <table class="table mt-5">
         <tr>
-          <th scope="row"><%= t(User.human_attribute_name(:email)) %></th>
+          <th scope="row"><i class="fas fa-envelope mr-2"></i><%= t(User.human_attribute_name(:email)) %></th>
           <td><%= current_user.email %></td>
         </tr>
         <tr>
-          <th scope="row"><%= t(User.human_attribute_name(:name)) %></th>
+          <th scope="row"><i class="fas fa-pen mr-2"></i><%= t(User.human_attribute_name(:name)) %></th>
           <td><%= current_user.name %></td>
         </tr>
         <tr>
-          <th scope="row"><%= t(User.human_attribute_name(:avatar)) %></th>
+          <th scope="row"><i class="fas fa-user-circle  mr-2"></i><%= t(User.human_attribute_name(:avatar)) %></th>
           <td><%= image_tag current_user.avatar.url, class: 'rounded-circle', size: '50x50' %></td>
         </tr>
       </table>
-      <div class='text-center mt-5 col-8 mx-auto'>
+      <div class='text-center my-5 py-4 col-8 mx-auto'>
         <%= link_to edit_profile_path, class:'flowbtn fl_user' do %>
           <i class="fas fa-user-edit"></i>
           <span>プロフィールを変更する</span>
