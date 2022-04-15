@@ -11,13 +11,13 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto main-nav align-items-center">
-        <li class="nav-item p-2">
+        <li class="nav-item px-2">
           <%= link_to '宅配サービス一覧', services_path, class: 'nav-link' %>
         </li>
-        <li class="nav-item p-2">
+        <li class="nav-item px-2">
           <%= link_to 'メニュー一覧', all_menus_path, class: 'nav-link' %>
         </li>
-        <li class="nav-item dropdown p-2">
+        <li class="nav-item dropdown px-2">
           <a class="nav-link" data-toggle="dropdown">
             <%= 'ランキング' %>
           </a>
@@ -27,7 +27,7 @@
           </div>
         </li>
 
-        <li class="nav-item dropdown p-2">
+        <li class="nav-item dropdown px-2">
           <a class="nav-link" data-toggle="dropdown">
             <%= image_tag current_user.avatar_url, size: '40x40', class: 'rounded-circle mr15' %>
             <%= current_user.name %>
