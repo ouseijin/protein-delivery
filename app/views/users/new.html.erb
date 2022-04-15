@@ -1,7 +1,11 @@
 <div class="container">
-  <div class="row">
+  <%# タイトル %>
+  <div class="user-title">
+    <%= render 'shared/title', text: 'ユーザー登録', html: '<span class="mr-2"><a href="/login"><i class="fas fa-sign-in-alt mr-2"></i></i>ログイン</a></span><i class="fas fa-angle-double-right mx-2"></i>'.html_safe %>
+  </div>
+
+  <div class="row pt-4">
     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <h1>ユーザー登録</h1>
       <%= form_with model: @user, local: true do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <div class="form-group">
@@ -30,16 +34,13 @@
           <%= f.file_field :avatar, onchange: 'previewFileWithId(preview)', class: 'form-control mb-3', accept: 'image/*' %>
           <%= f.hidden_field :avatar_cache %>
         </div>
-        <div class='mt-3 mb-3'>
+        <div class='mt-3 mb-3 text-center'>
           <%= image_tag @user.avatar.url,
                         id: 'preview',
                         size: '300x200' %>
         </div>
-        <%= f.submit '登録', class: 'btn btn-primary' %>
+        <%= f.submit '登録する', class: 'btn btn-outline-success' %>
       <% end %>
-      <div class='text-center'>
-        <%= link_to 'ログインページへ', login_path %>
-      </div>
     </div>
   </div>
 </div>
