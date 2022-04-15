@@ -5,22 +5,27 @@
       <%= form_with model: @user, local: true do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <div class="form-group">
+          <i class="fas fa-pen"></i>
           <%= f.label :name %>
           <%= f.text_field :name, class: 'form-control' %>
         </div>
         <div class="form-group">
+          <i class="fas fa-envelope"></i>
           <%= f.label :email %>
           <%= f.email_field :email, class: 'form-control' %>
         </div>
         <div class="form-group">
+          <i class="fas fa-lock"></i>
           <%= f.label :password %>
           <%= f.password_field :password, class: 'form-control' %>
         </div>
         <div class="form-group">
+          <i class="fas fa-key"></i>
           <%= f.label :password_confirmation %>
           <%= f.password_field :password_confirmation, class: 'form-control' %>
         </div>
         <div class="form-group">
+          <i class="fas fa-user-circle"></i>
           <%= f.label :avatar %>
           <%= f.file_field :avatar, onchange: 'previewFileWithId(preview)', class: 'form-control mb-3', accept: 'image/*' %>
           <%= f.hidden_field :avatar_cache %>

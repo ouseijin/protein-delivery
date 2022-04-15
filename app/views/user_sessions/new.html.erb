@@ -1,10 +1,8 @@
 <div class="container">
+
   <div class="row">
     <div class=" col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <div class='text-center py-4'>
-        <h1>ログイン</h1>
-      </div>
-      <div class='text-center'>
+      <div class='text-center pt-5'>
         <%= link_to auth_at_provider_path(provider: :twitter), class:'flowbtn fl_tw' do %>
           <i class="fab fa-twitter"></i>
           <span>Twitter アカウントでログインする</span>
@@ -15,14 +13,16 @@
         <% end %>
         <%= form_with url: login_path, local: true do |f| %>
           <div class="form-group pt-5">
+            <i class="fas fa-envelope"></i>
             <%= f.label :email, User.human_attribute_name(:email) %>
             <%= f.text_field :email, class: 'form-control', placeholder: 'メールアドレスを入力して下さい' %>
           </div>
           <div class="form-group">
+            <i class="fas fa-lock"></i>
             <%= f.label :password, User.human_attribute_name(:password) %>
             <%= f.password_field :password, class: 'form-control', placeholder: 'パスワードを入力して下さい' %>
           </div>
-          <div class="actions pb-5">
+          <div class="actions pb-4">
             <%= f.submit 'ログインする', class: 'btn btn-block btn-success' %>
           </div>
         <% end %>
