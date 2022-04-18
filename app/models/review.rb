@@ -13,6 +13,7 @@ class Review < ApplicationRecord
 
   def validate_number_of_files
     return if review_images.length <= FILE_NUMBER_LIMIT
+
     errors.add(:review_images, "に添付できる画像は#{FILE_NUMBER_LIMIT}枚までです。")
   end
 end

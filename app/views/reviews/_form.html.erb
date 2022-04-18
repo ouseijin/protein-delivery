@@ -5,22 +5,22 @@
         <%= render 'shared/error_messages', object: f.object %>
       </div>
       <div class='form-group'>
-        <%= f.label :title %>
+        <%= f.label :title %><span class="bg-secondary text-white small px-1 ml-2">任意</span>
         <%= f.text_field :title, class: 'form-control mb-3', id: 'js-new-review-title', placeholder: 'レビューのタイトルをお願いします' %>
       </div>
       <div class='form-group'>
-        <%= f.label :body %>
+        <%= f.label :body %><span class="bg-secondary text-white small px-1 ml-2">任意</span>
         <%= f.text_area :body, class: 'form-control mb-3', id: 'js-new-review-body', rows: 4, placeholder: 'レビュー内容の記載をお願いします' %>
       </div>
-      <div class='form-group' id='star'>
+      <div class="mb-3"><%= 'サービスの五段階評価' %><span class="bg-danger text-white small px-1 ml-2">必須</span></div>
+      <div class='form-group pb-4' id='star'>
         <%= f.label :rate %>
         <%= f.hidden_field :rate, id: :review_star %>
       </div>
       <div class="form-group">
-        <%= f.label :review_images %>
+        <%= f.label :review_images %><span class="bg-secondary text-white small px-1 ml-2">任意</span>
         <%= f.file_field :review_images, multiple: true, onchange: 'previewFileWithId(preview)', class: 'form-control mb-3', accept: 'image/*' %>
-        <%#= f.hidden_field :review_images_cache %>
-        <%#= 枚数制限のため、一時的にcache機能をstop %>
+        <%#= f.hidden_field :review_images_cache %> <%#= 枚数制限をつけているため、一時的にcache機能をstop %>
       </div>
       <div class='mt-3 mb-3'>
         <%= image_tag 'reviews/preview.png',
