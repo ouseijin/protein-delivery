@@ -17,7 +17,7 @@
 		right: 0;
 		bottom: 0;
 		content: '';
-		opacity: .3;
+		opacity: .4;
 		background: black;
 	}
 	&.hero-wrap-2{
@@ -29,8 +29,7 @@
 				color: white;
 			}
 			.breadcrumbs{
-				text-transform: uppercase;
-				font-size: 13px;
+				font-size: 15px;
 				letter-spacing: 1px;
 				span{
 					color: white;
@@ -46,4 +45,20 @@
 
 .rank-title {
   background-image: url("title/rank.png");
+}
+
+.service-title {
+  background-image: url("title/service.png");
+}
+
+.menu-title {
+  background-image: url("title/menu.png");
+}
+
+.user-title {
+  background-image: url("title/user.png");
+}
+
+.review-title {
+  background-image: url("title/review.png");
 }

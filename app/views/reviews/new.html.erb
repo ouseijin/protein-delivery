@@ -1,5 +1,40 @@
-<div class="text-center bg-light">
-  <h1>口コミ投稿</h1>
+<div class="container">
+  <%# タイトル %>
+  <div class="review-title">
+    <section class="hero-wrap hero-wrap-2">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <h1 class="mb-2 bread">口コミ投稿</h1>
+            <p class="breadcrumbs">
+              <span>
+                <%= link_to root_path do %>
+                  <i class="fas fa-home"></i>
+                  <%= 'HOME' %>
+                <% end %>
+                <i class="fas fa-angle-double-right mx-2"></i>
+                <%#= パーシャル_titleのhtml要素 %>
+                <%= link_to services_path do %>
+                  <i class="fas fa-truck"></i>
+                  <%= 'サービス一覧' %>
+                <% end %>
+                <i class="fas fa-angle-double-right mx-2"></i>
+                <%= link_to service_path(@service) do %>
+                  <i class="fas fa-box"></i>
+                  <%= @service.name %>
+                <% end %>
+                <i class="fas fa-angle-double-right mx-2"></i>
+                <%= '口コミ投稿' %>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+<div class="text-center bg-light pt-4">
   <%= render 'form', { service: @service, review: @review } %>
   <%= render 'reviews', { reviews: @reviews } %>
 </div>

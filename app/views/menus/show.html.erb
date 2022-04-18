@@ -1,5 +1,9 @@
-<div class="container pt-4">
-  <h1 class="text-center mb-4">メニュー詳細</h1>
+<div class="container">
+  <%# タイトル %>
+  <div class="menu-title">
+    <%= render 'shared/title', text: 'メニュー詳細', html: '<span class="mr-2"><a href="/all_menus"><i class="fas fa-utensils mr-1"></i>メニュー一覧</a></span><i class="fas fa-angle-double-right mx-2"></i>'.html_safe %>
+  </div>
+
   <div class="card">
     <div class="col-12">
       <div class="row">
