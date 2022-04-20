@@ -5,24 +5,6 @@
   height: 250px;
 }
 
-.responsive-size {
-  @media screen and (max-width: 767px) {
-    .name-size {
-      font-size: 1.2rem;
-      text-align: center;
-    }
-    .nutrient-size {
-      font-size: 1.2rem;
-      text-align: center;
-    }
-    .note-size {
-      font-size: 1.1rem;
-      text-align: center;
-    }
-  }
-  
-}
-
 .nutrient-size {
   @media screen and (min-width: 768px){
     .br-lg {
