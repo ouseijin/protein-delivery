@@ -12,7 +12,7 @@
         </div>
         <div class="col-lg-4 pl-2 border">
           <%= link_to service_path(@menu.service) do %>
-            <%= image_tag "services/#{@menu.service.service_logo}", class: 'ml-5', size: '238x170' %><%#= render 'services/service', { service: @menu.service } %>
+            <%= image_tag "services/#{@menu.service.service_logo}", class: 'ml-5', size: '238x170' %><%#= render 'services/service', { service: @menu.service }　に変えたい %>
           <% end %>
         </div>
       </div>
@@ -23,9 +23,9 @@
           <%= image_tag "menus/#{@menu.menu_image}", class: 'card-img-top img-fluid' %>
         </div>
         <div class="col-lg-8 d-flex align-items-center">
-          <h3>
+          <h3 class="col-12">
             <%= render partial: 'nutrient', collection: @menu.nutrients %>
-            <div class="col-12 text-danger mt-5 note-size">
+            <div class="text-danger mt-5 note-size">
               <%= simple_format(@menu.note) %>
             </div>
           </h3>
