@@ -9,6 +9,9 @@
   color:#fff!important;
   text-decoration:none;
   margin-bottom:25px;
+  @media screen and (max-width: 767px) {
+    font-size: 1.4rem;
+  }
 }
 /* アイコンボタンホバー時 */
 .flowbtn:hover span{
@@ -21,10 +24,13 @@
 .flowbtn span{
   font-size:25px;	
   position:relative;
-  left:8px;
+  left:4px;
   bottom:2px;
   transition:.6s;	
-  display:inline-block;	
+  display:inline-block;
+  @media screen and (max-width: 767px) {
+    font-size: 1.1rem;
+  }
 }
 /* Twitter */
 .fl_tw{

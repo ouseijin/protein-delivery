@@ -1,9 +1,11 @@
-<div class="col-sm-12 mb-3">
+<div class="col-12 mb-3 nutrient-size">
   <div>
     <%= "#{nutrient.size}サイズ" if nutrient.size.present? %>
     <%= "#{nutrient.calorie}kcal" %>
   </div>
-  <%= "タンパク質：#{nutrient.protein}g" %>
-  <%= "脂質：#{nutrient.fat}g" %>
-  <%= "炭水化物：#{nutrient.carb}g" %>
+  <div>
+    <%= "タンパク質：#{nutrient.protein}g" %><br class="br-lg">
+    <%= "脂質：#{nutrient.fat}g" %><br class="br-lg">
+    <%= "炭水化物：#{nutrient.carb}g" %>
+  </div>
 </div>

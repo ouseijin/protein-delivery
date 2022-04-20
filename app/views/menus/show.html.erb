@@ -4,28 +4,28 @@
     <%= render 'shared/title', text: 'メニュー詳細', html: '<span class="mr-2"><a href="/all_menus"><i class="fas fa-utensils mr-1"></i>メニュー一覧</a></span><i class="fas fa-angle-double-right mx-2"></i>'.html_safe %>
   </div>
 
-  <div class="card">
+  <div class="card responsive-size">
     <div class="col-12">
       <div class="row">
-        <div class="col-8 mt-5 pt-4">
-          <h3 class="text-center"><%= simple_format(@menu.name) %></h3>
+        <div class="col-lg-8 mt-5 pt-4">
+          <h3 class="text-center name-size"><%= simple_format(@menu.name) %></h3>
         </div>
-        <div class="col-4 pl-2 border">
+        <div class="col-lg-4 pl-2 border">
           <%= link_to service_path(@menu.service) do %>
-            <%= image_tag "services/#{@menu.service.service_logo}", class: 'ml-5', size: '238x170' %>
+            <%= image_tag "services/#{@menu.service.service_logo}", class: 'ml-5', size: '238x170' %><%#= render 'services/service', { service: @menu.service } %>
           <% end %>
         </div>
       </div>
     </div>
     <div class="card-body">
       <div class="row">
-        <div class="col-4">
+        <div class="col-lg-4">
           <%= image_tag "menus/#{@menu.menu_image}", class: 'card-img-top img-fluid' %>
         </div>
-        <div class="col-8 d-flex align-items-center">
+        <div class="col-lg-8 d-flex align-items-center">
           <h3>
             <%= render partial: 'nutrient', collection: @menu.nutrients %>
-            <div class="col-sm-12 text-danger mt-5">
+            <div class="col-12 text-danger mt-5 note-size">
               <%= simple_format(@menu.note) %>
             </div>
           </h3>
@@ -33,15 +33,14 @@
       </div>
     </div>
     <div class="row pt-2">
-      <div class="col-4 text-center">
+      <div class="col-lg-4 mb-5 text-center">
         <%= render 'menu_likes/like_button', { menu: @menu } %>
       </div>
-      <div class="col-6 ml-4 text-center">
+      <div class="col-lg-6 mx-4 text-center">
         <%= link_to "https://twitter.com/share?url=#{request.url}&text=この宅配食が良かった！&hashtags=宅配食&hashtags=たんぱく質", target: :_blank, rel: 'noopener noreferrer', class:'flowbtn fl_tw' do %>
           <i class="fab fa-twitter"></i>
-          <span>このメニューをTwitterでシェアする</span>
+          <span>このメニューをTwitterでシェア</span>
         <% end %>
-        <%# <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="この宅配食が良かった！" data-hashtags="宅配食 #たんぱく質" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> %>
       </div>
     </div>
   </div>
