@@ -4,6 +4,11 @@
       <div class="text-left bg-light">
         <%= render 'shared/error_messages', object: f.object %>
       </div>
+      <div class="mb-3"><%= 'サービスの五段階評価' %><span class="bg-danger text-white small px-1 ml-2">必須</span></div>
+      <div class='form-group pb-4' id='star'>
+        <%= f.label :rate %>
+        <%= f.hidden_field :rate, id: :review_star %>
+      </div>
       <div class='form-group'>
         <%= f.label :title %><span class="bg-secondary text-white small px-1 ml-2">任意</span>
         <%= f.text_field :title, class: 'form-control mb-3', id: 'js-new-review-title', placeholder: 'レビューのタイトルをお願いします' %>
@@ -11,11 +16,6 @@
       <div class='form-group'>
         <%= f.label :body %><span class="bg-secondary text-white small px-1 ml-2">任意</span>
         <%= f.text_area :body, class: 'form-control mb-3', id: 'js-new-review-body', rows: 4, placeholder: 'レビュー内容の記載をお願いします' %>
-      </div>
-      <div class="mb-3"><%= 'サービスの五段階評価' %><span class="bg-danger text-white small px-1 ml-2">必須</span></div>
-      <div class='form-group pb-4' id='star'>
-        <%= f.label :rate %>
-        <%= f.hidden_field :rate, id: :review_star %>
       </div>
       <div class="form-group">
         <%= f.label :review_images %><span class="bg-secondary text-white small px-1 ml-2">任意</span>
