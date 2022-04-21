@@ -18,29 +18,27 @@
       <% end %>
     </li>
   </ul>
-  <div class="text-center bg-light">
+  <div class="text-center bg-light responsive-size">
     <% @menu_like_ranks.each.with_index(1) do |rank, i| %>
       <div class="py-5 border border-top-0">
-        <i class="fas fa-crown"></i>
-        <%= "第#{i}位"%>
+        <span class="rank-name">
+          <i class="fas fa-crown"></i>
+          <%= "第#{i}位"%>
+          <span class="mx-3"><%= render 'menu_likes/like_button', { menu: rank } %></span>
+          <%= simple_format(rank.name) %>
+        </span>
+        <div class="rank-img-size"><%= image_tag "menus/#{rank.menu_image}", size: '450x300' %></div>
         <%#= render 'menu', { menu: rank } %>
-        <%= link_to "#{rank.service.name}のメニュー", service_path(rank.service), class: "card-header text-center" if current_page?('/all_menus') %>
-        <%# ここらへんにserviceのロゴとか入れたい %>
+        <%#= link_to "#{rank.service.name}のメニュー", service_path(rank.service), class: "card-header text-center" if current_page?('/all_menus') %><%# 代わりにserviceのロゴとか入れたい %>
         <%= link_to service_menu_path(rank.service, rank), class: "text-dark card-link" do %>
-          <div class="card-body card-size">
-            <div class="col-sm-12">
-              <%= simple_format(rank.name) %>
-            </div>
-            <div>
+          <div class="card-body">
+            
+            <div class="nutrient-size">
               <%= render partial: 'nutrient', collection: rank.nutrients %>
             </div>
-            <div class="col-sm-12 text-danger">
+            <div class="text-danger">
               <%= simple_format(rank.note) %>
             </div>
-          </div>
-          <div class="ml-4 col-sm-12 footer">
-            <%= image_tag "menus/#{rank.menu_image}", size: '300x200' %>
-            <%= render 'menu_likes/like_button', { menu: rank } %>
           </div>
         <% end %>
       </div>
