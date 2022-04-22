@@ -1,5 +1,8 @@
-<div><%= "ユーザーの評価#{service.reviews.average(:rate).to_f.round(1)}点/5点" %></div>
-<div id="star-rate_average-<%= service.id %>"></div>
+<div>
+  <span id="star-rate_average-<%= service.id %>"></span>
+  <%= "#{service.reviews.average(:rate).to_f.round(1)}点/5点" %>
+</div>
+
 <script>
 $('#star-rate_average-<%= service.id %>').empty();
   $('#star-rate_average-<%= service.id %>').raty({

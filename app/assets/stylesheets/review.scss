@@ -11,7 +11,11 @@
   border-radius:15px;
   -webkit-border-radius:15px;
   -moz-border-radius:15px;
+  @media (max-width: 767px){
+		width: 250px;
+	}
 }
+// 口コミの吹き出し
 .arrow_box:after{
   border: solid transparent;
   content:'';

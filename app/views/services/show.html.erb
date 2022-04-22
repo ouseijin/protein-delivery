@@ -28,24 +28,46 @@
       </div>
     </section>
   </div>
+  <div class="text-center bg-light row pt-3" style="margin: 0px;"><%# パーシャル化したい %>
+    <div class="col-lg-6">
+      <div class="mb-4">
+        <h2><%= @service.name %></h2>
+        <h4><%= render 'reviews/rate_average', { service: @service } %></h4>
+      </div>
+      <h4><%= simple_format(@service.body) %></h4>
+      
+      <div class="col-sm-12 my-5 px-5">
+        <%= link_to @service.service_url, target: :_blank, rel: 'noopener noreferrer', class: 'hp-button' do %>
+        <i class="fas fa-caret-square-right"></i>
+        <span>公式HPはコチラ！</span>
+        <% end %>
+      </div>
+      <div class="row p-3">
+        <div class="col-md-6">
+          <div class="card">
+            <%= link_to service_menus_path(@service), class: 'text-dark card-link' do %>
+              <%= image_tag 'services/menuguide.png', class: 'card-img' %>
+              <div class="card-body"><h5>メニューを見てみる</h5></div>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <%= link_to new_service_review_path(@service), data: create_alert_data, class: 'text-dark card-link' do %>
+              <%= image_tag 'reviews/reviewguide.jpg', class: 'card-img' %>
+              <div class="card-body"><h5>口コミを投稿する！</h5></div>
+              
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 pt-5 px-3">
+      <%= image_tag "services/#{@service.service_image}", class: 'size-adjust img-fluid' %>
+    </div>
+  </div>
 </div>
 
-<div class="text-center bg-light">
-  <%= @service.name %>
-  <div class="col-sm-12">
-    <%= simple_format(@service.body) %>
-    <%= render 'reviews/rate_average', { service: @service } %>
-  </div>
-  <div class="col-sm-12 my-4">
-    <%= link_to '公式HPはコチラ！', @service.service_url, target: :_blank, rel: 'noopener noreferrer' %>
-  </div>
-  <%= image_tag "services/#{@service.service_image}", width: '60%', height: '60%' %>
-  <div class="col-sm-12 my-4">
-    <%= link_to 'このサービスのメニューはコチラ！', service_menus_path(@service) %>
-  </div>
-  <div class="my-5">
-    <%= link_to '口コミを投稿する！', new_service_review_path(@service), data: create_alert_data %>
-  </div>
-  <%#= render 'reviews/form', { service: @service, review: @review } %>
+<div>
   <%= render 'reviews/reviews', { reviews: @reviews } %>
 </div>
