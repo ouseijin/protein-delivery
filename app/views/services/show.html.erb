@@ -28,7 +28,8 @@
       </div>
     </section>
   </div>
-  <div class="text-center bg-light row pt-3" style="margin: 0px;"><%# パーシャル化したい %>
+  <%# serviceの詳細 %>
+  <div class="text-center bg-light row py-3" style="margin: 0px;"><%# パーシャル化したい %>
     <div class="col-lg-6">
       <div class="mb-4">
         <h2><%= @service.name %></h2>
@@ -56,7 +57,6 @@
             <%= link_to new_service_review_path(@service), data: create_alert_data, class: 'text-dark card-link' do %>
               <%= image_tag 'reviews/reviewguide.jpg', class: 'card-img' %>
               <div class="card-body"><h5>口コミを投稿する！</h5></div>
-              
             <% end %>
           </div>
         </div>
@@ -66,8 +66,9 @@
       <%= image_tag "services/#{@service.service_image}", class: 'size-adjust img-fluid' %>
     </div>
   </div>
+  <%# 口コミ一覧の表示 %>
+  <div class="mt-5">
+    <%= render 'reviews/reviews', { reviews: @reviews } %>
+  </div>
 </div>
 
-<div>
-  <%= render 'reviews/reviews', { reviews: @reviews } %>
-</div>

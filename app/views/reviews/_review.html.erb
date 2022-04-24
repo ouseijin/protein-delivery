@@ -1,9 +1,9 @@
 <tr id="review-<%= review.id %>">
-  <td style="width: 60px">
-    <%= image_tag review.user.avatar_url, class: 'rounded-circle', size: '50x50' %>
+  <td style="width: 60px" class="review-icon">
+    <%= image_tag review.user.avatar_url, class: 'rounded-circle review-icon', size: '50x50' %>
   </td>
-  <td>
-    <h6 class="small text-left pt-3"><%= review.user.name %></h6>
+  <td style="padding: 12px 0px;">
+    <h6 class="text-left pt-3"><%= review.user.name %></h6>
     <div class='arrow_box'>
       <div id="js-review-<%= review.id %>">
         <h4><%= simple_format(review.title) %></h4>
@@ -25,7 +25,7 @@
         <button class="btn btn-success js-button-review-update" data-review-id="<%= review.id %>">更新</button>
       </div>
       <% if current_user&.own?(review) %>
-        <ul class="list-inline justify-content-center" style="float: right;">
+        <ul class="list-inline justify-content-center pr-3" style="float: right;">
           <li class="list-inline-item">
             <a href="#" class='js-edit-review-button' data-review-id="<%= review.id %>">
               <%#= icon 'fa', 'pen' %>
