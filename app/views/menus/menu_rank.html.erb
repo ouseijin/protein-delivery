@@ -31,14 +31,8 @@
         <%#= link_to "#{rank.service.name}のメニュー", service_path(rank.service), class: "card-header text-center" if current_page?('/all_menus') %><%# 代わりにserviceのロゴとか入れたい %>
         <%= link_to service_menu_path(rank.service, rank), class: "text-dark card-link" do %>
           <span class="rank-name"><%= simple_format(rank.name, style: 'margin-bottom: 0px;') %></span>
-          <div class="rank-img-size pt-3"><%= image_tag "menus/#{rank.menu_image}", size: '450x300' %></div>
-          <div class="card-body">
-            <div class="nutrient-size">
-              <%= render partial: 'nutrient', collection: rank.nutrients %>
-            </div>
-            <div class="text-danger">
-              <%= simple_format(rank.note) %>
-            </div>
+          <div class="rank-img-size pt-3">
+            <%= image_tag "menus/#{rank.menu_image}", size: '450x300' %>
           </div>
         <% end %>
       </div>

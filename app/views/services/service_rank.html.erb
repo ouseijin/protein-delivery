@@ -24,23 +24,19 @@
       <%= link_to service_path(rank), class: "text-dark card-link" do %>
         <div class="py-5 border border-top-0 responsive-size">
           <div>
-            <span class="service-rank">
+            <span class="service-rank px-4">
               <i class="fas fa-crown"></i>
               <%= "第#{i}位"%>
             </span>
-            
             <%= render 'reviews/rate_average', { service: rank } %>
           </div>
-          <div><%= rank.name %></div>
-          <div class="col-sm-12">
-            <%= rank.body %>
-            
+          <div class="pt-2">
+            <div><h2><%= rank.name %></h2></div>
+            <div class="pt-3 px-4"><h5><%= rank.body %></h5></div>
+            <div class="rank-img-size pt-3">
+              <%= image_tag "services/#{rank.service_image}", size: '450x300' %>
+            </div>
           </div>
-
-          <div class="col-sm-12">
-            <%= image_tag "services/#{rank.service_image}", width: '30%', height: '30%' %>
-          </div>
-
         </div>
       <% end %>
     <% end %>
