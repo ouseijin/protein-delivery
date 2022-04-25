@@ -33,7 +33,7 @@
     <div class="col-lg-6">
       <div class="mb-4">
         <h2><%= @service.name %></h2>
-        <h4><%= render 'reviews/rate_average', { service: @service } %></h4>
+        <%= render 'reviews/rate_average', { service: @service } %>
       </div>
       <h4><%= simple_format(@service.body) %></h4>
       

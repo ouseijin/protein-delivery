@@ -1,7 +1,7 @@
-<div>
+<span class="rate-average">
   <span id="star-rate_average-<%= service.id %>"></span>
   <%= "#{service.reviews.average(:rate).to_f.round(1)}点/5点" %>
-</div>
+</span>
 
 <script>
 $('#star-rate_average-<%= service.id %>').empty();
