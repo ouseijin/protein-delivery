@@ -1,0 +1,27 @@
+.card-link {
+  text-decoration: none;
+}
+.card-size {
+  height: 250px;
+}
+
+.nutrient-size {
+  @media screen and (min-width: 768px){
+    .br-lg {
+      display: none; 
+    }
+  }
+}
+
+.rank-name {
+  font-size: 1.6rem;
+}
+
+.size-adjust {
+  height: 500px;
+  object-fit: cover;
+  @media (max-width: 767px){
+    height: 300px;
+		object-fit: cover;
+	}
+}

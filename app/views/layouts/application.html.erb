@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ProteinDelivery</title>
     <% if Rails.env.production? %>
       <%= render 'layouts/google_analytics' %>
@@ -21,5 +22,6 @@
     <% end %>
     <%= render 'shared/flash_message' %>
     <%= yield %>
+    <%= render 'shared/footer' %>
   </body>
 </html>

@@ -1,9 +1,9 @@
+// 口コミの背景
 .arrow_box{
   position:relative;
-  width:800px;
   background:#EEEECE;
-  padding:20px;
-  margin-top:35px; 
+  padding:20px 0px;
+  margin-top:35px;
   text-align:center;
   color:#333333;
   font-size:14px;
@@ -12,6 +12,7 @@
   -webkit-border-radius:15px;
   -moz-border-radius:15px;
 }
+// 口コミの吹き出し
 .arrow_box:after{
   border: solid transparent;
   content:'';
@@ -28,4 +29,14 @@
   border-bottom-color:#EEEECE;
   bottom:100%;
   left:6%;
+  @media (max-width: 767px){
+		left: 15%;
+	}
+}
+//星の平均点表示
+.rate-average {
+  font-size: 1.6rem;
+  img {
+    padding-bottom: 5px;
+  }
 }

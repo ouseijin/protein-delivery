@@ -1,4 +1,4 @@
-<div class="col-sm-12 col-lg-4 mb-3">
+<div class="col-sm-12 col-md-6 col-lg-4 mb-3">
   <div class="card">
     <%= link_to "#{menu.service.name}のメニュー", service_path(menu.service), class: "card-header text-center" if current_page?('/all_menus') %>
     <%= link_to service_menu_path(menu.service, menu), class: "text-dark card-link" do %>

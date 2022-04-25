@@ -1,0 +1,32 @@
+.responsive-size {
+  @media screen and (max-width: 767px) {
+    .name-size {
+      font-size: 1.3rem;
+      text-align: center;
+    }
+    // menu詳細ページで
+    .nutrient-size {
+      font-size: 1.3rem;
+      text-align: center;
+    }
+    .note-size {
+      font-size: 1.1rem;
+      text-align: center;
+    }
+    .profile-size {
+      font-size: 0.8rem;
+    }
+    .rank-img-size img {
+      width: 300px;
+      height: 200px;
+    }
+    .service-rank {
+      display: block;
+    }
+    // 口コミで表示されるアイコン
+    .review-icon {
+      padding: 0px;
+      margin-top: 15px;
+    }
+  }
+}

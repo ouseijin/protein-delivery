@@ -1,0 +1,74 @@
+/* ボタン全体 */
+.flowbtn{
+  font-family:'Verdana',sans-serif;	
+  border-radius:4px;
+  position:relative;
+  display:inline-block;
+  width:100%;
+  font-size:30px;
+  color:#fff!important;
+  text-decoration:none;
+  margin-bottom:25px;
+  @media screen and (max-width: 767px) {
+    font-size: 1.4rem;
+  }
+}
+/* アイコンボタンホバー時 */
+.flowbtn:hover span{
+  -webkit-transform: rotateX(360deg);
+  -ms-transform: rotateX(360deg);
+  transform: rotateX(360deg);
+  text-decoration:none;
+}
+/* ボタン内テキスト調整 */
+.flowbtn span{
+  font-size:25px;	
+  position:relative;
+  left:4px;
+  bottom:2px;
+  transition:.6s;	
+  display:inline-block;
+  @media screen and (max-width: 767px) {
+    font-size: 1.1rem;
+  }
+}
+/* Twitter */
+.fl_tw{
+  background:#00acee;
+}
+/* Google */
+.fl_goo{
+  background:#ef3f56;
+}
+/* ユーザー作成 */
+.fl_user{
+  background:#555;
+}
+
+/* 区切りの線 */
+.hr1 {
+  border-top: 1px dashed #000; /* 破線 */
+}
+
+/* 公式HP案内に使ったボタン */
+.hp-button {
+  display: block;
+  padding: 0.6em;
+  background: linear-gradient(to right, #e66465 50%, rgb(0, 0, 0) 50%);
+  background-size: 200% 100.5%;
+  background-position: right bottom;
+  font: 1.25em 'Montserrat';
+  color: white;
+  border: none;
+  border-left: 0.80em solid #e66465;
+  border-color: none;
+  box-shadow: 3px 3px 2px rgba(0,0,0,0.08);
+  transition: all .5s ease-out;
+  &:hover {
+    background-position: left bottom;
+    color: black;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 0.95rem;
+  }
+}

@@ -10,27 +10,27 @@
         <%= render 'shared/error_messages', object: f.object %>
         <div class="form-group">
           <i class="fas fa-pen"></i>
-          <%= f.label :name %>
+          <%= f.label :name %><span class="bg-danger text-white small px-1 ml-2">必須</span>
           <%= f.text_field :name, class: 'form-control' %>
         </div>
         <div class="form-group">
           <i class="fas fa-envelope"></i>
-          <%= f.label :email %>
+          <%= f.label :email %><span class="bg-danger text-white small px-1 ml-2">必須</span>
           <%= f.email_field :email, class: 'form-control' %>
         </div>
         <div class="form-group">
           <i class="fas fa-lock"></i>
-          <%= f.label :password %>
+          <%= f.label :password %><span class="bg-danger text-white small px-1 ml-2">必須</span>
           <%= f.password_field :password, class: 'form-control' %>
         </div>
         <div class="form-group">
           <i class="fas fa-key"></i>
-          <%= f.label :password_confirmation %>
+          <%= f.label :password_confirmation %><span class="bg-danger text-white small px-1 ml-2">必須</span>
           <%= f.password_field :password_confirmation, class: 'form-control' %>
         </div>
         <div class="form-group">
           <i class="fas fa-user-circle"></i>
-          <%= f.label :avatar %>
+          <%= f.label :avatar %><span class="bg-secondary text-white small px-1 ml-2">任意</span>
           <%= f.file_field :avatar, onchange: 'previewFileWithId(preview)', class: 'form-control mb-3', accept: 'image/*' %>
           <%= f.hidden_field :avatar_cache %>
         </div>
