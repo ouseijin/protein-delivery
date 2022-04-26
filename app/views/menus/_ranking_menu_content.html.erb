@@ -1,0 +1,15 @@
+<span class="rank-name">
+  <i class="fas fa-crown"></i>
+  <%= "第#{j}位"%>
+  <span class="mx-3"><%= render 'menu_likes/like_button', { menu: menu } %></span>     
+</span>
+
+<%#= render 'menu', { menu: rank } %>
+<%#= link_to "#{rank.service.name}のメニュー", service_path(rank.service), class: "card-header text-center" if current_page?('/all_menus') %><%# 代わりにserviceのロゴとか入れたい %>
+
+<%= link_to service_menu_path(menu.service, menu), class: "text-dark card-link" do %>
+  <span class="rank-name"><%= simple_format(menu.name, style: 'margin-bottom: 0px;') %></span>
+  <div class="rank-img-size pt-3">
+    <%= image_tag "menus/#{menu.menu_image}", size: '450x300' %>
+  </div>
+<% end %>

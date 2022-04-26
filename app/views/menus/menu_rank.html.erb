@@ -18,22 +18,31 @@
       <% end %>
     </li>
   </ul>
+
+  <!--同率順位表示のためのコード-->
+  <% last_like = 0 %>
+  <% j = 1 %>
+
   <div class="text-center bg-light responsive-size">
     <% @menu_like_ranks.each.with_index(1) do |rank, i| %>
       <div class="py-5 border border-top-0">
-        <span class="rank-name">
-          <i class="fas fa-crown"></i>
-          <%= "第#{i}位"%>
-          <span class="mx-3"><%= render 'menu_likes/like_button', { menu: rank } %></span>     
-        </span>
-        
-        <%#= render 'menu', { menu: rank } %>
-        <%#= link_to "#{rank.service.name}のメニュー", service_path(rank.service), class: "card-header text-center" if current_page?('/all_menus') %><%# 代わりにserviceのロゴとか入れたい %>
-        <%= link_to service_menu_path(rank.service, rank), class: "text-dark card-link" do %>
-          <span class="rank-name"><%= simple_format(rank.name, style: 'margin-bottom: 0px;') %></span>
-          <div class="rank-img-size pt-3">
-            <%= image_tag "menus/#{rank.menu_image}", size: '450x300' %>
-          </div>
+        <!--順位が1位のときlast_likeに値は入っていないため、１位のいいねのカウント数を代入-->
+        <% if i == 1 %>
+          <% last_like = rank.menu_likes.count %>
+        <% end %>
+
+        <!--last_likeといいね数比べて、違うなら次の順位表示-->
+        <% if rank.menu_likes.count != last_like %>
+          <% j = i %>
+          <%# メニューの内容 %>
+          <%= render 'ranking_menu_content', { j: j, menu: rank } %>
+          <% last_like = rank.menu_likes.count %>
+
+        <!--last_likeといいね数比べて同じ場合の処理、同じ順位を表示-->
+        <% else %>  
+          <%# メニューの内容 %>
+          <%= render 'ranking_menu_content', { j: j, menu: rank } %>
+          <% last_like = rank.menu_likes.count %>
         <% end %>
       </div>
     <% end %>
