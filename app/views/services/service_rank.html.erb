@@ -4,17 +4,17 @@
     <%= render 'shared/title', text: 'ランキング', html: ''.html_safe %>
   </div>
   <%# ナビゲーションのタブ %>
-  <ul class="nav nav-tabs nav-justified">
+  <ul class="nav nav-tabs nav-justified responsive-size">
     <li class="nav-item">
       <%= link_to service_rank_path, class: 'nav-link font-weight-bold active' do %>
         <i class="fas fa-truck"></i>
-        <span>サービスランキング</span>
+        <span class="rank-tab">サービスランキング</span>
       <% end %>
     </li>
     <li class="nav-item">
       <%= link_to menu_rank_path, class: 'nav-link' do %>
         <i class="fas fa-utensils"></i>
-        <span>メニューランキング</span>
+        <span class="rank-tab">メニューランキング</span>
       <% end %>
     </li>
   </ul>
