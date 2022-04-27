@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="ml-4 col-sm-12 footer">
-        <%= image_tag "menus/#{menu.menu_image}", size: '300x200' %>
+        <%= image_tag "menus/#{menu.menu_image}",class: 'size-adjust', size: '300x200' %>
         <%= render 'menu_likes/like_button', { menu: menu } %>
       </div>
     <% end %>
