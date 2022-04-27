@@ -1,0 +1,15 @@
+.service-rank {
+  font-size: 1.6rem;
+}
+
+.service-rank-img-size {
+  height: 400px;
+  width: 500px;
+}
+
+.service-img-size {
+  height: 500px;
+  @media (max-width: 767px){
+    height: 300px;
+	}
+}
