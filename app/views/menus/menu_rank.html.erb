@@ -20,7 +20,7 @@
   </ul>
 
   <!--同率順位表示のためのコード-->
-  <% last_like = 0 %><!--あらかじめlast_likeを定義、これが無いと2番目からlast_likeが存在しなくなる-->
+  <% last_like = 0 %><!--あらかじめlast_likeを定義、これが無いと2番目からifの前にlast_likeが存在しなくなる-->
   <% j = 1 %><!--jを定義して1を代入、これによって１位を表示-->
 
   <div class="text-center bg-light responsive-size">
@@ -34,14 +34,10 @@
         <!--last_likeといいね数比べて、違うなら次の順位表示-->
         <% if rank.menu_likes.count != last_like %>
           <% j = i %>
-          <%= render 'ranking_menu_content', { j: j, menu: rank } %>
-          <% last_like = rank.menu_likes.count %>
-
-        <!--last_likeといいね数比べて同じ場合の処理、同じ順位を表示-->
-        <% else %>  
-          <%= render 'ranking_menu_content', { j: j, menu: rank } %>
-          <% last_like = rank.menu_likes.count %>
         <% end %>
+        <!--last_likeといいね数比べて同じ場合の処理、jはそのままで同じ順位を表示-->
+        <%= render 'ranking_menu_content', { j: j, menu: rank } %>
+        <% last_like = rank.menu_likes.count %>
       </div>
     <% end %>
   <div>
