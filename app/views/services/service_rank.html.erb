@@ -19,24 +19,26 @@
     </li>
   </ul>
 
+  <!--同率順位表示のためのコード-->
+  <% last_rate = 0 %><!--あらかじめlast_rateを定義、これが無いと2番目からifの前にlast_rateが存在しなくなる-->
+  <% j = 1 %><!--jを定義して1を代入、これによって１位を表示-->
+
   <div class="text-center bg-light">
     <% @service_rate_ranks.each.with_index(1) do |rank, i| %>
       <%= link_to service_path(rank), class: "text-dark card-link" do %>
         <div class="py-5 border border-top-0 responsive-size">
-          <div>
-            <span class="service-rank px-4">
-              <i class="fas fa-crown"></i>
-              <%= "第#{i}位"%>
-            </span>
-            <%= render 'reviews/rate_average', { service: rank } %>
-          </div>
-          <div class="pt-2">
-            <div><h2><%= rank.name %></h2></div>
-            <div class="pt-3 px-4"><h5><%= rank.body %></h5></div>
-            <div class="rank-img-size pt-3">
-              <%= image_tag "services/#{rank.service_image}", size: '450x300' %>
-            </div>
-          </div>
+          <!--順位が1位のときlast_rateに値は入っていないため、１位の評価を代入-->
+          <% if i == 1 %>
+            <% last_rate = rank.reviews.average(:rate).to_f.round(1) %>
+          <% end %>
+
+          <!--last_rateと星の平均評価を比べて、違うなら次の順位表示-->
+          <% if rank.reviews.average(:rate).to_f.round(1) != last_rate %>
+            <% j = i %>
+          <% end %> 
+          <!--last_rateと星の平均評価を比べて同じ場合の処理、jはそのままで同じ順位を表示-->
+          <%= render 'ranking_service_content', { j: j, service: rank } %>
+          <% last_like = rank.reviews.average(:rate).to_f.round(1) %>
         </div>
       <% end %>
     <% end %>
