@@ -13,3 +13,47 @@
     <%= link_to "ログインページへ", login_path, class: 'btn btn-outline-warning' %>
   </div>
 </div>
+
+<section>
+  <div class="row no-gutters">
+    <div class="col-sm-5 top-second-img size-adjust , size:'200x150'd-flex align-items-center justify-content-center justify-content-md-end" style="position: relative">
+    </div>
+    <div class="col-sm-7 wrap-about py-5">
+      <div class="heading-section mt-5 mb-4">
+        <div class="pl-lg-5 ml-md-5">
+          <span class="subheading">About</span>
+          <h2 class="mb-4">Welcome to<span class="br"></span> Protein-delivery</h2>
+        </div>
+      </div>
+      <div class="px-lg-5 mx-md-5">
+        <p class="pb-2">
+          もっとカッコいい身体になりたい！もっとキレイな身体になりたい！もっと痩せたい！<br>
+          そんな身体づくりで重要なのは、食事>睡眠>運動　の順番で一番は食事です。<br>
+          しかし、食事というものは毎日摂るものであり、栄養の管理が難しい…
+        </p>
+        <p class="pb-2">
+          そんな悩みを一発で解決してくれるものが高タンパクで低カロリーな宅配食です！<br>
+          そしてこうした宅配食の中でもどれが美味しいのか知れたら良いと思い、宅配食のレビューサイトをつくりました。
+        </p>
+        <p>
+          身体づくりに励む私達で、優れた宅配食の情報を共有し合い、理想の体型に変わり、周囲の人達を驚かせてしまいましょう！
+        </p>
+        <h3 class="mt-5">主なメニュー</h3>
+        <div class="thumb my-4 d-flex">
+          <%= link_to service_menu_path(1, 80), class: 'thumb-menu pr-md-4 text-center' do%>
+            <%= image_tag "menus/tsukunetotaiwanhuu.jpg", class: 'img size-adjust', size:'200x150' %>
+            <h4>つくねと台湾風焼きそばセット</h4>
+          <% end %>
+          <%= link_to service_menu_path(4, 438), class: 'thumb-menu pr-md-4 text-center' do%>
+            <%= image_tag "menus/teisiboucurry.jpg", class: 'img size-adjust', size:'200x150' %>
+            <h4>低脂肪カレー</h4>
+          <% end %>
+          <%= link_to service_menu_path(7, 748), class: 'thumb-menu pr-md-4 text-center' do%>
+            <%= image_tag "menus/sakenocreamsauce.jpg", class: 'img size-adjust', size:'200x150' %>
+            <h4>鮭のクリームソース</h4>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

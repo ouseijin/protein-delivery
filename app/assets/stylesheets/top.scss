@@ -50,3 +50,77 @@
   left: 0;
   content: ' ';
 }
+//トップページの説明横の画像
+.top-second-img {
+  background-image: url("about.png");
+  @media screen and (max-width: 767px) {
+    height: 600px;
+  }
+}
+//トップページの説明
+.wrap-about{
+	position: relative;
+  p{
+    line-height: 2;
+    color: #666666;
+  }
+	h3{
+		font-size: 18px;
+		font-weight: 700;
+	}
+	.thumb{
+		.thumb-menu{
+			width: 100%;
+			.img{
+				height: 150px;
+				margin: 0 auto;
+				margin-bottom: 10px;
+				-webkit-box-shadow: 0px 24px 48px -12px rgba(0,0,0,0.1);
+				-moz-box-shadow: 0px 24px 48px -12px rgba(0,0,0,0.1);
+				box-shadow: 0px 24px 48px -12px rgba(0,0,0,0.1);
+        @media screen and (max-width: 1189px) {
+          width: 133px;
+          height: 100px;
+        }
+        @media screen and (max-width: 767px) {
+          width: 100px;
+          height: 75px;
+        }
+			}
+			h4{
+				font-size: 14px;
+				color: rgba(0,0,0,.3);
+			}
+			&:hover,&:focus{
+				.img{
+					-webkit-box-shadow: 0px 24px 48px -12px rgba(0,0,0,0.19);
+					-moz-box-shadow: 0px 24px 48px -12px rgba(0,0,0,0.19);
+					box-shadow: 0px 24px 48px -12px rgba(0,0,0,0.19);
+				}
+				h4{
+					color: black;
+				}
+			}
+		}
+	}
+}
+//トップページの説明箇所の見出し
+.heading-section{
+	.subheading{
+		font-weight: normal;
+		font-size: 40px;
+		display: block;
+		color: #FF3366;
+		line-height: 1;
+		font-family: cursive;
+		z-index: -1;
+	}
+	h2{
+		font-weight: 900;
+    @media screen and (max-width: 767px) {
+      .br {
+        display: block;
+      }
+    }
+	}
+}
