@@ -53,9 +53,12 @@
 
 //トップページの説明横の画像
 .top-second-img {
-  background-image: url("about.png");
-  @media screen and (max-width: 767px) {
-    height: 600px;
+  @media screen and (min-width: 1400px) {
+    height: 855px;
+  }
+  //モバイルの横幅
+  @media screen and (max-width: 575px) {
+    height: 700px;
   }
 }
 

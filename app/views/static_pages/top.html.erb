@@ -17,8 +17,18 @@
 <%# topページの説明 %>
 <section>
   <div class="row no-gutters">
-    <div class="col-sm-5 top-second-img size-adjust d-flex align-items-center justify-content-center justify-content-md-end" style="position: relative">
+    <div class="carousel slide col-sm-5" id="t1" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#t1" data-slide-to="0" class="active"></li>
+        <li data-target="#t1" data-slide-to="1"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active top-second-img size-adjust"><img src="/assets/about.png" class=""></div>
+        <div class="carousel-item top-second-img size-adjust"><img src="/assets/about1.png" class=""></div>
+      </div>
     </div>
+    <%# <div class="col-sm-5 top-second-img size-adjust d-flex align-items-center justify-content-center justify-content-md-end" style="position: relative">
+    </div> %>
     <div class="col-sm-7 wrap-about py-5">
       <div class="heading-section mt-5 mb-4">
         <div class="pl-lg-5 ml-md-5">
