@@ -7,10 +7,15 @@
     <%= f.select :nutrients_carb_lteq, { '炭水化物10g以下': 10.0, '炭水化物20g以下': 20.0, '炭水化物30g以下': 30.0, '炭水化物40g以下': 40.0, '炭水化物50g以下': 50.0 }, { include_blank: '炭水化物制限' } %>
     <%= f.search_field :name_cont, class: 'form-control', placeholder: '商品名（トマト、カレー、パスタ　など）' %>
     <div class="input-group-append">
-      <%= f.submit '検索', class: 'btn btn-primary' %>
+      <%= f.submit '検索', class: 'btn btn-danger' %>
     </div>  
   </div>
-  <div class="text-center">
-    <%= link_to '検索条件をクリアする', '/all_menus' %>
+  <div class="row justify-content-center">
+    <div class="col-lg-3 col-md-5 my-5 px-4">
+      <%= link_to all_menus_path, class: 'search-reset-button' do %>
+      <i class="fas fa-undo-alt"></i>
+      <span>検索条件をクリアする</span>
+      <% end %>
+    </div>
   </div>
 <% end %>

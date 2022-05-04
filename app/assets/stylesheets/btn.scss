@@ -72,3 +72,24 @@
     font-size: 0.95rem;
   }
 }
+
+/* 検索のリセットに使ったボタン */
+.search-reset-button {
+  text-align: center;
+  display: block;
+  padding: 0.2em;
+  background: linear-gradient(to right, #FF9966 50%, rgb(0, 0, 0) 50%);
+  background-size: 200% 100.5%;
+  background-position: right bottom;
+  font: 1.2em 'Montserrat';
+  color: white;
+  border: none;
+  border-left: 0.80em solid #FF9966;
+  border-color: none;
+  box-shadow: 3px 3px 2px rgba(0,0,0,0.08);
+  transition: all .5s ease-out;
+  &:hover {
+    background-position: left bottom;
+    color: black;
+  }
+}
