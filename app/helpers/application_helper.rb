@@ -23,7 +23,7 @@ module ApplicationHelper
       },
       twitter: {
         card: 'summary_large_image',
-        site: '@aJ2q8qRROxPbesk'
+        site: '@ouseijin'
       }
     }
   end
