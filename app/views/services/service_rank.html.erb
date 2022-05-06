@@ -38,7 +38,7 @@
           <% end %> 
           <!--last_rateと星の平均評価を比べて同じ場合の処理、jはそのままで同じ順位を表示-->
           <%= render 'ranking_service_content', { j: j, service: rank } %>
-          <% last_like = rank.reviews.average(:rate).to_f.round(1) %>
+          <% last_rate = rank.reviews.average(:rate).to_f.round(1) %>
         </div>
       <% end %>
     <% end %>
