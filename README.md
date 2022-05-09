@@ -1,11 +1,41 @@
 # protein-delivery
 https://www.protein-delivery.net
-![タイトルなし](https://user-images.githubusercontent.com/78645413/167299883-3dc183c1-e7ba-4f8a-b8a9-e4343d3909ee.gif)
+
+![top](https://user-images.githubusercontent.com/78645413/167354852-eb7aee3e-4fa6-4cb4-aa3d-af85a5b3bdb0.gif)
 
 # サービス概要
 筋トレやダイエット中で、高タンパクな宅配食を必要とする人のための
 高タンパク質の宅配食に限定した
 レビューサイトです。
+
+# 機能
+## 検索機能
+項目別による宅配食の検索が出来ます。  
+「カロリー」「たんぱく質」「メニューの名称」など様々な条件で検索出来るようにしました。（検索にヒットした数も表示されます）
+
+![search](https://user-images.githubusercontent.com/78645413/167361607-018ab473-131c-4cd9-87c0-f96831898f65.gif)
+
+
+## 口コミ投稿機能
+サービスに対する口コミを投稿出来ます。
+
+![review](https://user-images.githubusercontent.com/78645413/167361744-e847778f-9f8b-424e-a2a2-058fc3114a5d.gif)
+
+## ランキング機能
+ランキングにより評判の良いサービス・メニューが一目で分かります。
+
+| サービスランキング | メニューランキング |
+----|---- 
+| サービスの星5段階評価によるランキングです。 | メニューのいいねの数によるランキングです。 |
+| ![servicerank](https://user-images.githubusercontent.com/78645413/167372474-a6c5242e-eed8-4b1d-a355-0715f82f5ca7.png) | ![menurank](https://user-images.githubusercontent.com/78645413/167373625-b35191b4-a855-4a5c-b20a-5e3708b7afa1.png) |
+
+## SNS認証によるログイン
+
+| 未ログイン時のユーザー登録への案内 | ログインページ |
+----|---- 
+| 未ログインでログインユーザー専用の機能を使うとユーザー登録への案内を表示します→ | twitterやgoogleのSNS認証を使えば簡単にログイン出来ます |
+| ![loginlead](https://user-images.githubusercontent.com/78645413/167379169-fe2fa6bc-54d1-4a24-8694-5b0362205c03.gif) | ![snslogin](https://user-images.githubusercontent.com/78645413/167383032-14a68723-492b-453e-abbe-0a4c2985aea7.png) |
+
 
 
 # メインのターゲットユーザー
