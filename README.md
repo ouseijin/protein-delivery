@@ -96,4 +96,6 @@ https://www.figma.com/file/UtvxbQrMSL6kih5SSaDYLG/画面遷移図?node-id=0%3A1
 
 
 # ER図
+![ER Diagram drawio](https://user-images.githubusercontent.com/78645413/168453403-ea200ab3-c4d9-443b-b2a2-57935c32003f.png)
+
 https://drive.google.com/file/d/1HDyb9WGtucyzHJeaQ-hD1rNLGFQbOXsF/view?usp=sharing

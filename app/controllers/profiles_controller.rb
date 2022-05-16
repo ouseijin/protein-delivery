@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
   private
 
   def set_user
-    @user = User.find(current_user.id)
+    @user = User.find(current_user.id) # @user = current_user　だと、プロフィール編集失敗時にcurrent_userがupdateの影響を受けてしまう。User.findであれば、DBから取得したUserのため、current_userに影響を及ぼさない
   end
 
   def user_params
