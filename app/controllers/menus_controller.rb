@@ -17,4 +17,10 @@ class MenusController < ApplicationController
     @menu_like_ranks = Menu.includes(:service, :nutrients, :menu_likes)
                            .find(MenuLike.group(:menu_id).order('count(menu_id) desc').limit(5).pluck(:menu_id))
   end
+
+  def like_menus
+    likes = MenuLike.where(user_id: current_user.id).pluck(:menu_id)
+    @menus = Menu.where(id: likes).includes(:service, :nutrients, :menu_likes).page(params[:page])
+    # findメソッドではメソッドチェインが使えないためwhere
+  end
 end
