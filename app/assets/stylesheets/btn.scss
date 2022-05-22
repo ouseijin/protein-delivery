@@ -93,3 +93,44 @@
     color: black;
   }
 }
+
+/* ランキングページへの案内に使ったボタン */
+.rank-button {
+  padding: 20px 40px;
+  background: none;
+  border: none;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  cursor: pointer;
+  text-decoration: none !important;
+  @media screen and (min-width: 768px) {
+    font-size: 1.75rem;
+  }
+
+  &:after, &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: 2px solid #000;
+    transition: transform 0.2s;
+  }
+
+  &:after {
+    transform: translate(3px, 3px);
+  }
+
+  &:before {
+    transform: translate(-3px, -3px);
+  }
+
+  &:hover {
+    &:after, &:before {
+      transform: translate(0);
+    }
+  }
+}

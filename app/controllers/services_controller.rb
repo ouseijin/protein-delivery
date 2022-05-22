@@ -1,4 +1,6 @@
 class ServicesController < ApplicationController
+  before_action :require_login, only: [:service_rank]
+
   def index
     @services = Service.all
   end
