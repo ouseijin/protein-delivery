@@ -28,7 +28,7 @@ module ApplicationHelper
     }
   end
 
-  def create_alert_data
+  def login_confirm
     if logged_in?
       nil
     else
