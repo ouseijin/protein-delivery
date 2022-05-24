@@ -1,5 +1,4 @@
-<%= link_to polymorphic_path([service, menu, menu_like]), id: "js-like-button-for-menu-#{menu.id}", method: :delete, remote: true do %>
+<%= link_to polymorphic_path([service, menu, menu_like]), id: "js-like-button-for-menu-#{menu.id}", method: :delete, class: 'unlike-link', remote: true do %>
   <i class="fas fa-heart unlike-btn"></i>
   <%= menu.menu_likes.length %>
 <% end %>
-<%#= class:"float-right" %>

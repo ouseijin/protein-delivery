@@ -12,4 +12,20 @@
   font-size: 35px;
   color: #e54747;
   margin-left: 20px;
+}
+
+.like-link {
+  text-decoration: none !important;
+  color: #808080;
+  &:hover {
+    color: #808080;
   }
+}
+
+.unlike-link {
+  text-decoration: none !important;
+  color: #e54747;
+  &:hover {
+    color: #e54747;
+  }
+}
