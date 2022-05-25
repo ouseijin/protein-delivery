@@ -1,4 +1,6 @@
 class MenusController < ApplicationController
+  before_action :require_login, only: [:menu_rank, :like_menus]
+
   def all_menus
     @q = Menu.ransack(params[:q])
     @menus = @q.result(distinct: true).includes(:service, :nutrients, :menu_likes).page(params[:page])
