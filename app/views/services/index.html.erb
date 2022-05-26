@@ -7,4 +7,13 @@
   <div class="row justify-content-around py-4" style="margin: 0px;">
     <%= render @services %>
   </div>
+  
+  <div class="row justify-content-center">
+    <div class="my-5 pb-4">
+      <%= link_to service_rank_path, data: login_confirm, class: 'rank-button text-dark' do %>
+      <i class="fas fa-crown"></i>
+      <span>サービスランキングを見る</span>
+      <% end %>
+    </div>
+  </div>
 </div>

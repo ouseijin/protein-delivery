@@ -1,0 +1,21 @@
+<meta name="viewport" content="width=960">
+<div class="container">
+  <%# タイトル %>
+  <div class="menu-title">
+    <%= render 'shared/title', text: 'いいねしたメニュー', html: ''.html_safe %>
+  </div>
+</div>
+
+<div class="d-flex align-items-center justify-content-center my-2 pt-4">
+  <%= page_entries_info @menus %>
+</div>
+
+<div class="container-fluid mt-4">
+  <div class="row">
+    <%= render @menus %>
+  </div>
+</div>
+
+<div class="d-flex align-items-center justify-content-center">
+  <%= paginate @menus %>
+</div>

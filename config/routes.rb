@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:new, :create]
   resource :profile, only: [:show, :edit, :update]
+  get 'like_menus', to: 'menus#like_menus'
   get 'all_menus', to: 'menus#all_menus'
   get 'menu_rank', to: 'menus#menu_rank'
   get 'service_rank', to: 'services#service_rank'

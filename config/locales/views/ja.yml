@@ -11,7 +11,7 @@ ja:
       one_page:
         display_entries:
           zero: "該当のメニューは０件でした"
-          one: "全<strong>1</strong>件のメニューを表示"
+          one: "全<strong>1</strong>件のメニューを表示" # <strong>は文字の強調
           other: "全<strong>%{count}</strong>件のメニューを表示"
       more_pages:
         display_entries: "全%{total}件中　<strong>%{first}〜%{last}</strong>件のメニューを表示"
