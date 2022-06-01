@@ -86,7 +86,8 @@ https://www.protein-delivery.net
 - bootstrap 4.5.0
   - カルーセル
   - パンくずリスト
-- jQuery(raty.js)
+- JavaScript
+- raty.js
 
 ## インフラ
 - AWS(S3)
