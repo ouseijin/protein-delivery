@@ -14,7 +14,8 @@ AllCops:
     - vendor/**/*
     - node_modules/**/*
     - config/initializers/sorcery.rb
-    - db/scrape_test.rb # nokogiri使わなければ、ファイルとこのコードを消していいかも
+    - db/scrape_test.rb
+    - db/scrape_test2.rb
 
 # "Missing top-level class documentation comment."を無効
 Style/Documentation:

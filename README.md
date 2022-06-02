@@ -7,6 +7,9 @@ https://www.protein-delivery.net
 筋トレやダイエット中で、高タンパク・低カロリーな宅配食を必要とする人のための  
 高タンパク質の宅配食に限定したレビューサイトです。
 
+サービスリリース後、多くの方に使用して頂くことが出来ました。
+- PV数 2,000超え
+
 # 実装した機能
 ## 検索機能
 項目別による宅配食の検索が出来ます。  
@@ -83,10 +86,12 @@ https://www.protein-delivery.net
 - bootstrap 4.5.0
   - カルーセル
   - パンくずリスト
-- jQuery(raty.js)
+- JavaScript
+- raty.js
 
 ## インフラ
 - AWS(S3)
+- MySQL
 
 
 

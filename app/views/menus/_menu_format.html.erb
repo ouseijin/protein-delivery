@@ -1,0 +1,15 @@
+<div class="d-flex align-items-center justify-content-center mb-2">
+  <%= page_entries_info @menus %>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <%= render @menus %>
+  </div>
+</div>
+
+<%= render 'ranking_menu_button' unless current_page?('/like_menus') %>
+
+<div class="d-flex align-items-center justify-content-center py-4">
+  <%= paginate @menus %>
+</div>

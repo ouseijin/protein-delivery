@@ -38,7 +38,7 @@ yarn-debug.log*
 
 .DS_Store
 
-/db/scrape_test.rb
+/db/scrape_test2.rb
 /app/assets/javascripts
 /app/javascript/stylesheets
 /app/javascript/images
