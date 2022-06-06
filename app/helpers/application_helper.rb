@@ -49,4 +49,12 @@ module ApplicationHelper
       title: '口コミの削除確認'
     }
   end
+
+  def judge_page
+    if current_page?("/services/#{@service&.id}/menus")
+      render 'shared/breadcrumb_menu_index'
+    else
+      nil
+    end
+  end
 end

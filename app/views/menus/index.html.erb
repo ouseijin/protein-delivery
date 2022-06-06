@@ -2,37 +2,7 @@
 <div class="container">
   <%# タイトル %>
   <div class="menu-title">
-    <section class="hero-wrap hero-wrap-2">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
-            <h1 class="mb-2 bread"><%= "#{@service.name}のメニュー" %></h1>
-            <p class="breadcrumbs">
-              <span>
-                <%= link_to root_path do %>
-                  <i class="fas fa-home"></i>
-                  <%= 'HOME' %>
-                <% end %>
-                <i class="fas fa-angle-double-right mx-2"></i>
-                <%#= パーシャル_titleのhtml要素 %>
-                <%= link_to services_path do %>
-                  <i class="fas fa-truck"></i>
-                  <%= 'サービス一覧' %>
-                <% end %>
-                <i class="fas fa-angle-double-right mx-2"></i>
-                <%= link_to service_path(@service) do %>
-                  <i class="fas fa-box"></i>
-                  <%= @service.name %>
-                <% end %>
-                <i class="fas fa-angle-double-right mx-2"></i>
-                <%= "#{@service.name}のメニュー" %>
-              </span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <%= render 'shared/title', text: "#{@service.name}のメニュー", html: ''.html_safe %>
   </div>
 </div>
 
