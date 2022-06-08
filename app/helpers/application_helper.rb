@@ -53,6 +53,8 @@ module ApplicationHelper
   def judge_page
     if current_page?("/services/#{@service&.id}/menus")
       render 'shared/breadcrumb_menus_index'
+    elsif current_page?("/services/#{@service&.id}")
+      render 'shared/breadcrumb_services_show'
     else
       nil
     end
