@@ -51,14 +51,11 @@ module ApplicationHelper
   end
 
   def judge_page
-    if current_page?("/services/#{@service&.id}/menus")
-      render 'shared/breadcrumb_menus_index'
-    elsif current_page?("/services/#{@service&.id}")
-      render 'shared/breadcrumb_services_show'
-    elsif current_page?("/services/#{@service&.id}/reviews/new")
-      render 'shared/breadcrumb_reviews_new'
+    if %w[/ /menus /reviews/new].any? { |url| current_page?("/services/#{@service&.id}#{url}") }
+      render 'shared/breadcrumb_services'
     else
       nil
     end
   end
 end
+# if %w[/menus /reviews/new].any? { |name| current_page?("/services/#{@service&.id}#{name}") }
