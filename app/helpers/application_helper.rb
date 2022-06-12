@@ -50,12 +50,10 @@ module ApplicationHelper
     }
   end
 
-  # パンくずリスト表示でページ毎に異なるサービス名のページのみrenders
-  def judge_page
-    if %w[/ /menus /reviews/new].any? { |url| current_page?("/services/#{@service&.id}#{url}") }
-      render 'shared/breadcrumb_services'
-    else
-      nil
-    end
+  # パンくずリスト表示でページ毎に異なるサービス名のページのみrender処理するためのコード
+  def display_breadcrumb(service)
+    return unless %w[/ /menus /reviews/new].any? { |url| current_page?("/services/#{service&.id}#{url}") }
+
+    render 'shared/breadcrumb_services'
   end
 end
