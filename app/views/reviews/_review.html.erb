@@ -27,11 +27,6 @@
       <% if current_user&.own?(review) %>
         <ul class="list-inline justify-content-center pr-2" style="float: right;">
           <li class="list-inline-item">
-            <a href="#" class='js-edit-review-button' data-review-id="<%= review.id %>">
-              <%#= icon 'fa', 'pen' %>
-            </a>
-          </li>
-          <li class="list-inline-item">
             <%= link_to service_review_path(review.service, review), class:'js-delete-review-button', method: :delete, data: delete_confirm, remote: true do %>
               <i class="fas fa-trash-alt"></i>
               <span>削除する</span>
