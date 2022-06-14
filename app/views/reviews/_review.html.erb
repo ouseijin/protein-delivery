@@ -1,5 +1,5 @@
 <tr id="review-<%= review.id %>">
-  <td style="width: 60px" class="review-icon">
+  <td class="td-icon review-icon">
     <%= image_tag review.user.avatar_url, class: 'rounded-circle review-icon', size: '50x50' %>
   </td>
   <td style="padding: 12px 0px;">
@@ -19,13 +19,8 @@
       <div class="pt-4">
         <%= render 'review_likes/like_button', { review: review } %>
       </div>
-      <div id="js-textarea-review-box-<%= review.id %>" style="display: none;">
-        <textarea id="js-textarea-review-<%= review.id %>" class="form-control mb-1"><%= review.body %></textarea>
-        <button class="btn btn-light js-button-edit-review-cancel" data-review-id="<%= review.id %>">キャンセル</button>
-        <button class="btn btn-success js-button-review-update" data-review-id="<%= review.id %>">更新</button>
-      </div>
       <% if current_user&.own?(review) %>
-        <ul class="list-inline justify-content-center pr-2" style="float: right;">
+        <ul class="list-inline justify-content-center pr-2 float-right">
           <li class="list-inline-item">
             <%= link_to service_review_path(review.service, review), class:'js-delete-review-button', method: :delete, data: delete_confirm, remote: true do %>
               <i class="fas fa-trash-alt"></i>
