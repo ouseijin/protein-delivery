@@ -11,7 +11,6 @@ class ServicesController < ApplicationController
   end
 
   def service_rank
-    @service_rate_ranks = Service.find(Review.group(:service_id)
-                          .order('sum(rate)/count(rate) desc').limit(3).pluck(:service_id))
+    @service_rate_ranks = Service.rate_rank
   end
 end

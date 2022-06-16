@@ -1,35 +1,10 @@
 <div class="container">
   <%# タイトル %>
   <div class="service-title">
-    <section class="hero-wrap hero-wrap-2">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
-            <h1 class="mb-2 bread"><%= @service.name %></h1>
-            <p class="breadcrumbs">
-              <span>
-                <%= link_to root_path do %>
-                  <i class="fas fa-home"></i>
-                  <%= 'HOME' %>
-                <% end %>
-                <i class="fas fa-angle-double-right mx-2"></i>
-                <%#= パーシャル_titleのhtml要素 %>
-                <%= link_to services_path do %>
-                  <i class="fas fa-truck"></i>
-                  <%= 'サービス一覧' %>
-                <% end %>
-                <i class="fas fa-angle-double-right mx-2"></i>
-                <%= @service.name %>
-              </span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <%= render 'shared/title', text: @service.name, html: ''.html_safe %>
   </div>
   <%# serviceの詳細 %>
-  <div class="text-center bg-light row py-3" style="margin: 0px;"><%# パーシャル化したい %>
+  <div class="text-center bg-light row py-3 service-container"><%# パーシャル化したい %>
     <div class="col-lg-6">
       <div class="mb-4">
         <h2><%= @service.name %></h2>
